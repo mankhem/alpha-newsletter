@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Trading Pro · Morning Newsletter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #080810;
+    --bg2: #0d0d18;
+    --surface: #10101e;
+    --surface2: #181828;
+    --surface3: #1e1e30;
+    --border: #252538;
+    --border2: #2e2e48;
+    --accent: #00e5b0;
+    --accent-dim: rgba(0,229,176,0.12);
+    --accent-glow: rgba(0,229,176,0.25);
+    --red: #ff3d5a;
+    --red-dim: rgba(255,61,90,0.12);
+    --green: #00e5b0;
+    --gold: #ffcc44;
+    --gold-dim: rgba(255,204,68,0.1);
+    --supply: #ff7755;
+    --supply-dim: rgba(255,119,85,0.12);
+    --demand: #44ddaa;
+    --demand-dim: rgba(68,221,170,0.12);
+    --text: #e4e4f4;
+    --text2: #9898b8;
+    --text3: #555570;
+    --mono: 'JetBrains Mono', monospace;
+    --display: 'Barlow Condensed', sans-serif;
+    --body: 'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle grid texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(0,229,176,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,176,0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+  /* HEADER */
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .logo-wrap { display: flex; align-items: center; gap: 12px; }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 18px;
+    color: #080810;
+    letter-spacing: -1px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .logo-text span { color: var(--accent); }
+  .logo-sub { font-size: 11px; color: var(--text3); font-family: var(--mono); letter-spacing: 1px; margin-top: 3px; }
+
+  .header-right { display: flex; align-items: center; gap: 10px; }
+
+  .date-chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  .market-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .market-open { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-glow); }
+  .market-closed { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,61,90,0.2); }
+
+  /* SECTION HEADERS */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover { border-color: var(--border2); }
+
+  /* INTRO */
+  #introText {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.7;
+    resize: none;
+    outline: none;
+    min-height: 80px;
+  }
+
+  #introText::placeholder { color: var(--text3); }
+
+  /* TOS LINK */
+  .tos-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tos-input-wrap { flex: 1; position: relative; }
+
+  .tos-prefix {
+    position: absolute;
+    left: 12px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    pointer-events: none;
+  }
+
+  #tosLink {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px 10px 34px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  #tosLink:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+  #tosLink::placeholder { color: var(--text3); font-family: var(--body); font-size: 13px; }
+
+  .tos-clear {
+    background: none; border: none;
+    color: var(--text3); cursor: pointer;
+    font-size: 18px; padding: 4px; line-height: 1;
+    transition: color 0.15s;
+  }
+  .tos-clear:hover { color: var(--red); }
+
+  .tos-badge {
+    font-family: var(--mono); font-size: 10px;
+    padding: 4px 10px; border-radius: 5px;
+    white-space: nowrap; flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .tos-badge.set { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-glow); }
+  .tos-badge.empty { background: var(--surface2); color: var(--text3); border: 1px solid var(--border); }
+
+  /* ADD TICKER */
+  .add-row {
+    display: flex; gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .add-input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 11px 16px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .add-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+  .add-input::placeholder { color: var(--text3); text-transform: none; font-weight: 400; font-family: var(--body); }
+
+  /* BUTTONS */
+  .btn {
+    padding: 10px 18px;
+    border-radius: 8px; border: none;
+    cursor: pointer;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-green { background: var(--accent); color: #080810; }
+  .btn-green:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+  .btn-ghost {
+    background: var(--surface2); color: var(--text2);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--border2); }
+
+  .btn-discord {
+    background: #5865f2; color: #fff;
+    font-size: 16px; padding: 16px;
+    width: 100%; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 4px 20px rgba(88,101,242,0.3);
+    transition: all 0.2s;
+  }
+  .btn-discord:hover { background: #4752c4; box-shadow: 0 6px 24px rgba(88,101,242,0.4); transform: translateY(-1px); }
+  .btn-discord:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .btn-preview {
+    background: var(--surface2); color: var(--text2);
+    border: 1px solid var(--border);
+    font-size: 13px; padding: 8px 14px;
+  }
+  .btn-preview:hover { color: var(--accent); border-color: var(--accent-glow); }
+
+  /* CONTROLS ROW */
+  .controls-row {
+    display: flex; justify-content: flex-end; gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  /* TICKER CARDS */
+  .ticker-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 6px;
+    transition: border-color 0.2s;
+  }
+
+  .ticker-card.included { border-color: rgba(0,229,176,0.25); }
+  .ticker-card:hover { border-color: var(--border2); }
+  .ticker-card.included:hover { border-color: rgba(0,229,176,0.4); }
+
+  .ticker-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px;
+    cursor: pointer; user-select: none;
+    background: var(--surface2);
+    transition: background 0.15s;
+  }
+
+  .ticker-header:hover { background: var(--surface3); }
+
+  .t-emoji { font-size: 15px; width: 22px; text-align: center; flex-shrink: 0; }
+
+  .t-symbol {
+    font-family: var(--display);
+    font-weight: 700; font-size: 15px;
+    color: var(--text); min-width: 62px;
+    letter-spacing: 0.3px;
+  }
+
+  .futures-tag {
+    font-family: var(--mono); font-size: 8px; font-weight: 700;
+    padding: 2px 5px; border-radius: 3px;
+    background: var(--gold-dim); color: var(--gold);
+    border: 1px solid rgba(255,204,68,0.2);
+    letter-spacing: 0.5px;
+  }
+
+  .t-price {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--text2);
+  }
+
+  .t-gap {
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px;
+  }
+
+  .gap-up { background: rgba(0,229,176,0.15); color: var(--green); }
+  .gap-down { background: rgba(255,61,90,0.15); color: var(--red); }
+  .gap-flat { background: var(--surface3); color: var(--text3); }
+
+  .t-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+  .include-label {
+    display: flex; align-items: center; gap: 5px;
+    cursor: pointer; font-size: 11px; color: var(--text3);
+    font-family: var(--mono);
+  }
+
+  .include-label input[type="checkbox"] {
+    accent-color: var(--accent);
+    width: 14px; height: 14px; cursor: pointer;
+  }
+
+  .t-chevron { color: var(--text3); font-size: 10px; transition: transform 0.2s; }
+  .t-chevron.open { transform: rotate(90deg); }
+
+  /* TICKER BODY */
+  .ticker-body {
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  .ticker-body.hidden { display: none; }
+  .field-full { grid-column: 1 / -1; }
+
+  .field-wrap { display: flex; flex-direction: column; gap: 5px; }
+
+  .field-label {
+    font-family: var(--mono); font-size: 8px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  .field-label.lbl-supply { color: var(--supply); opacity: 0.8; }
+  .field-label.lbl-demand { color: var(--demand); opacity: 0.8; }
+  .field-label.lbl-pivot { color: var(--gold); opacity: 0.8; }
+
+  .field-input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: var(--text);
+    font-family: var(--mono); font-size: 12px;
+    outline: none; width: 100%;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .field-input:focus { background: var(--surface3); }
+  .field-input::placeholder { color: var(--text3); font-size: 11px; }
+  .field-input.inp-pivot:focus { border-color: var(--gold); }
+  .field-input.inp-supply:focus { border-color: var(--supply); }
+  .field-input.inp-demand:focus { border-color: var(--demand); }
+  .field-input.inp-comment { font-family: var(--body); font-size: 13px; }
+  .field-input.inp-comment:focus { border-color: var(--accent); }
+
+  /* PREVIEW */
+  .preview-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .preview-body {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: var(--mono); font-size: 12px;
+    line-height: 2;
+    color: #b0b0d0;
+    white-space: pre-wrap;
+    max-height: 320px;
+    overflow-y: auto;
+    min-height: 60px;
+  }
+
+  .preview-body::-webkit-scrollbar { width: 4px; }
+  .preview-body::-webkit-scrollbar-track { background: transparent; }
+  .preview-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+  /* STATUS */
+  .status {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: var(--mono); font-size: 12px;
+    margin-bottom: 12px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .status.show { display: block; }
+  .status.ok { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-glow); }
+  .status.err { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,61,90,0.2); }
+  .status.info { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+  /* SPINNER */
+  .spin {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* CHAR COUNT */
+  .char-count {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--text3); text-align: right;
+    margin-top: 4px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    font-family: var(--mono); font-size: 10px;
+    color: var(--text3); margin-top: 40px;
+    letter-spacing: 1px;
+  }
+
+  /* CONVICTION */
+  .conviction-row {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .conviction-label {
+    font-family: var(--mono); font-size: 9px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text3);
+  }
+  .conviction-flames {
+    display: flex; gap: 4px;
+  }
+  .flame-btn {
+    background: none; border: none;
+    font-size: 18px; cursor: pointer;
+    opacity: 0.25;
+    transition: opacity 0.15s, transform 0.15s;
+    padding: 2px;
+    line-height: 1;
+  }
+  .flame-btn.active { opacity: 1; }
+  .flame-btn:hover { transform: scale(1.2); opacity: 0.7; }
+  .flame-btn.active:hover { transform: scale(1.2); opacity: 1; }
+
+  /* CSV FLOW UPLOAD */
+  .csv-upload-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  .csv-drop-area {
+    border: 1.5px dashed var(--border2);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .csv-drop-area:hover { border-color: var(--accent); background: var(--accent-dim); }
+  .csv-drop-area.loaded { border-color: var(--accent); border-style: solid; background: var(--accent-dim); }
+  .csv-drop-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+
+  .csv-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .csv-stat {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text2);
+  }
+
+  .csv-stat.highlight { color: var(--accent); border-color: var(--accent-glow); background: var(--accent-dim); }
+
+  .flow-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .flow-tag {
+    font-size: 11px;
+    font-family: var(--mono);
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    white-space: nowrap;
+  }
+
+  .flow-tag.whale { background: rgba(88,101,242,0.15); color: #8899ff; border-color: rgba(88,101,242,0.3); }
+  .flow-tag.sweep { background: rgba(255,204,68,0.15); color: var(--gold); border-color: rgba(255,204,68,0.3); }
+  .flow-tag.unusual { background: rgba(255,119,85,0.15); color: var(--supply); border-color: rgba(255,119,85,0.3); }
+  .flow-tag.bullish { background: rgba(0,229,176,0.15); color: var(--accent); border-color: var(--accent-glow); }
+  .flow-tag.bearish { background: rgba(255,61,90,0.15); color: var(--red); border-color: rgba(255,61,90,0.3); }
+
+  /* NEWS */
+  .news-section {
+    grid-column: 1 / -1;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .news-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .news-title {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+
+  .btn-pull-news {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 4px 10px;
+    color: var(--text2);
+    font-family: var(--mono);
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-pull-news:hover { color: var(--accent); border-color: var(--accent-glow); }
+  .btn-pull-news:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .news-list {
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .news-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .news-headline {
+    font-family: var(--body);
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.4;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .news-headline:hover { color: var(--accent); }
+
+  .news-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+  }
+
+  .news-check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .news-empty {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  /* CHART UPLOAD */
+  .chart-upload-area {
+    grid-column: 1 / -1;
+    border: 1.5px dashed var(--border2);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+  .chart-upload-area:hover { border-color: var(--accent); background: var(--accent-dim); }
+  .chart-upload-area.has-image { border-color: var(--accent); border-style: solid; }
+  .chart-upload-area input[type="file"] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+  }
+  .chart-upload-icon { font-size: 20px; flex-shrink: 0; }
+  .chart-upload-text { font-family: var(--mono); font-size: 11px; color: var(--text3); flex: 1; }
+  .chart-upload-text.ready { color: var(--accent); }
+  .chart-preview-thumb { width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border2); flex-shrink: 0; }
+  .chart-clear { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 16px; padding: 2px 6px; border-radius: 4px; transition: color 0.15s, background 0.15s; z-index: 2; position: relative; flex-shrink: 0; }
+  .chart-clear:hover { color: var(--red); background: var(--red-dim); }
+  .btn-reddit { background: #ff4500; color: #fff; font-size: 16px; padding: 16px; width: 100%; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 20px rgba(255,69,0,0.3); transition: all 0.2s; margin-top: 10px; }
+  .btn-reddit:hover { background: #e03d00; box-shadow: 0 6px 24px rgba(255,69,0,0.4); transform: translateY(-1px); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .ticker-body { grid-template-columns: 1fr 1fr; }
+    .site-header { flex-wrap: wrap; gap: 10px; }
+    .t-symbol { min-width: 50px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-wrap">
+      <div class="logo-mark">ATP</div>
+      <div>
+        <div class="logo-text">Alpha Trading <span>Pro</span></div>
+        <div class="logo-sub">MORNING NEWSLETTER TOOL v17</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="date-chip" id="dateBadge">—</div>
+      <div class="market-status" id="marketStatus">—</div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="section-head"><span class="section-label">Morning Intro</span><div class="section-line"></div></div>
+  <div class="card">
+    <textarea id="introText" rows="4" placeholder="Good morning Traders ☀️&#10;Write your market context, overnight action, macro note..."></textarea>
+    <div class="char-count" id="introCount">0 chars</div>
+  </div>
+
+  <!-- TOS LINK -->
+  <div class="section-head"><span class="section-label">ThinkorSwim Grid</span><div class="section-line"></div></div>
+  <div class="card">
+    <div class="tos-row">
+      <span style="font-size:18px">📊</span>
+      <div class="tos-input-wrap">
+        <span class="tos-prefix">🔗</span>
+        <input type="url" id="tosLink" placeholder="Paste your TOS grid link here..." oninput="onTosInput()">
+      </div>
+      <button class="tos-clear" onclick="clearTos()" title="Clear">✕</button>
+      <span class="tos-badge empty" id="tosBadge">No link</span>
+    </div>
+  </div>
+
+  <!-- FLOW CSV UPLOAD -->
+  <div class="section-head"><span class="section-label">Yesterday's Flow (QuantData CSV)</span><div class="section-line"></div></div>
+  <div class="csv-upload-section">
+    <div class="csv-drop-area" id="csvDropArea">
+      <input type="file" accept=".csv" onchange="loadFlowCSV(this)">
+      <span style="font-size:20px">📊</span>
+      <div style="flex:1">
+        <div id="csvLabel" style="font-family:var(--body);font-size:13px;color:var(--text2)">Click or drag QuantData CSV file here</div>
+        <div id="csvSub" style="font-family:var(--mono);font-size:10px;color:var(--text3);margin-top:3px">Auto-tags tickers with 🐋 🏛️ 🎯 based on flow data</div>
+      </div>
+      <button id="csvClear" style="display:none;background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;z-index:2;position:relative" onclick="clearFlowCSV(event)">✕</button>
+    </div>
+    <div class="csv-stats" id="csvStats" style="display:none"></div>
+  </div>
+
+  <!-- ADD HOT TICKER -->
+  <div class="section-head"><span class="section-label">Hot Ticker</span><div class="section-line"></div></div>
+  <div class="add-row">
+    <input class="add-input" id="addInput" type="text" placeholder="Add any ticker popping today (e.g. PLTR, HOOD)..." maxlength="8">
+    <button class="btn btn-green" onclick="addHot()">+ Add</button>
+  </div>
+
+  <!-- TICKERS -->
+  <div class="section-head"><span class="section-label">Watchlist</span><div class="section-line"></div></div>
+  <div class="controls-row">
+    <button class="btn btn-ghost" style="font-size:12px;padding:7px 12px" onclick="toggleAll(true)">Collapse All</button>
+    <button class="btn btn-ghost" style="font-size:12px;padding:7px 12px" onclick="toggleAll(false)">Expand All</button>
+    <button class="btn btn-ghost" style="font-size:12px;padding:7px 12px;color:var(--accent);border-color:var(--accent-glow)" onclick="saveAllLevels()">💾 Save Levels</button>
+    <button class="btn btn-ghost" style="font-size:12px;padding:7px 12px;color:var(--red)" onclick="clearAllLevels()">🗑 Clear All</button>
+  </div>
+
+  <div id="tickersGrid"></div>
+
+  <div class="divider"></div>
+
+  <!-- PREVIEW -->
+  <div class="section-head"><span class="section-label">Preview</span><div class="section-line"></div></div>
+  <div class="card">
+    <div class="preview-header">
+      <span style="font-size:13px;color:var(--text2)">What will be posted to Discord</span>
+      <button class="btn btn-preview" onclick="updatePreview()">↻ Refresh Preview</button>
+    </div>
+    <div class="preview-body" id="previewBody">Hit "Refresh Preview" after filling in your levels...</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STATUS -->
+  <div class="status" id="statusBar"></div>
+
+  <!-- POST -->
+  <button class="btn btn-discord" id="postBtn" onclick="postToDiscord()">
+    <svg width="22" height="16" viewBox="0 0 71 55" fill="none"><path d="M60.1 4.9A58.6 58.6 0 0 0 45.5.7a40.8 40.8 0 0 0-1.8 3.7 54.2 54.2 0 0 0-16.3 0A41 41 0 0 0 25.5.7 58.5 58.5 0 0 0 10.9 4.9C1.6 18.7-.9 32.2.3 45.5a59 59 0 0 0 18 9.1 44.6 44.6 0 0 0 3.9-6.3 38.3 38.3 0 0 1-6.1-2.9l1.5-1.1a42.2 42.2 0 0 0 36 0l1.5 1.1a38.5 38.5 0 0 1-6.1 2.9 44.3 44.3 0 0 0 3.9 6.3 58.8 58.8 0 0 0 18-9 58 58 0 0 0-10.8-40.6ZM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.5 0 6.4 3.2 6.3 7.2 0 4-2.8 7.2-6.3 7.2Zm23.6 0c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.5 0 6.4 3.2 6.3 7.2 0 4-2.8 7.2-6.3 7.2Z" fill="currentColor"/></svg>
+    Post to Discord → #morning-newsletter
+  </button>
+
+  <button class="btn btn-reddit" onclick="copyForReddit()">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 5.522 4.477 10 10 10s10-4.478 10-10zm-3.713-1.26a1.513 1.513 0 0 1 .213.76 1.51 1.51 0 0 1-.76 1.312c.02.163.029.328.029.494 0 2.52-2.933 4.562-6.549 4.562-3.616 0-6.549-2.042-6.549-4.562 0-.166.01-.331.03-.494a1.51 1.51 0 0 1-.547-2.833 1.51 1.51 0 0 1 1.894.514 7.378 7.378 0 0 1 4.008-1.27l.68-3.196a.255.255 0 0 1 .303-.196l2.252.472a1.06 1.06 0 1 1-.1.51l-2-.42-.6 2.83a7.395 7.395 0 0 1 3.976 1.27 1.51 1.51 0 0 1 1.72-.753zm-9.537 2.01a1.06 1.06 0 1 0 2.12 0 1.06 1.06 0 0 0-2.12 0zm5.947 2.8c-.65.648-1.9.7-2.263.7-.362 0-1.612-.052-2.262-.7a.254.254 0 0 0-.36.358c.836.834 2.363.9 2.622.9.26 0 1.786-.066 2.622-.9a.255.255 0 0 0-.359-.358zm-.527-1.74a1.06 1.06 0 1 0 2.12 0 1.06 1.06 0 0 0-2.12 0z"/></svg>
+    Copy for Reddit → r/TradeWithLevels
+  </button>
+
+  <div class="footer">ALPHA TRADING PRO · NEWSLETTER TOOL · INTERNAL USE ONLY</div>
+
+</div>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────────
+const WEBHOOKS = [
+  'https://discord.com/api/webhooks/1489596712506097664/ROB8SKKglKjwq3YYClYiPnr3aihkoMSmt3Z1hPI1Wo2eGuDuTBTt1WWz6uUR7_dBe1kz',
+  'https://discord.com/api/webhooks/1380202261787054182/h2uZspX4i1Yqgh288PJ4jrjZo48GQcCfdF6U-yjhx-weiBh4n6KbMdFPa1zxzgVthNNG',
+];
+
+const WATCHLIST = [
+  { sym: '/BTC', emoji: '🪙', futures: true },
+  { sym: '/CL',  emoji: '🛢️', futures: true },
+  { sym: '/ES',  emoji: '📊', futures: true },
+  { sym: '/GC',  emoji: '🥇', futures: true },
+  { sym: '/NQ',  emoji: '💻', futures: true },
+  { sym: '/RTY', emoji: '📉', futures: true },
+  { sym: '/YM',  emoji: '🏦', futures: true },
+  { sym: 'AAPL', emoji: '🍏' },
+  { sym: 'AMD',  emoji: '🧠' },
+  { sym: 'AMZN', emoji: '📦' },
+  { sym: 'APP',  emoji: '📲' },
+  { sym: 'ASTS', emoji: '🛰️' },
+  { sym: 'AVGO', emoji: '⚡' },
+  { sym: 'BA',   emoji: '✈️' },
+  { sym: 'BIDU', emoji: '🇨🇳' },
+  { sym: 'CAVA', emoji: '🫙' },
+  { sym: 'CIEN', emoji: '🔌' },
+  { sym: 'COIN', emoji: '🪙' },
+  { sym: 'COST', emoji: '🛒' },
+  { sym: 'CRCL', emoji: '📉' },
+  { sym: 'CRWD', emoji: '🛡️' },
+  { sym: 'CRWV', emoji: '🤖' },
+  { sym: 'FSLR', emoji: '☀️' },
+  { sym: 'GOOGL',emoji: '🔎' },
+  { sym: 'GS',   emoji: '🏦' },
+  { sym: 'HOOD', emoji: '🏹' },
+  { sym: 'IONQ', emoji: '⚛️' },
+  { sym: 'IREN', emoji: '🔋' },
+  { sym: 'IWM',  emoji: '📊' },
+  { sym: 'LLY',  emoji: '💊' },
+  { sym: 'LRCX', emoji: '🔬' },
+  { sym: 'META', emoji: '📱' },
+  { sym: 'MRVL', emoji: '💡' },
+  { sym: 'MSFT', emoji: '🖥️' },
+  { sym: 'MSTR', emoji: '🏦' },
+  { sym: 'MU',   emoji: '💾' },
+  { sym: 'NBIS', emoji: '🤖' },
+  { sym: 'NFLX', emoji: '🎬' },
+  { sym: 'NVDA', emoji: '🖥️' },
+  { sym: 'OKLO', emoji: '☢️' },
+  { sym: 'ORCL', emoji: '🗄️' },
+  { sym: 'PDD',  emoji: '🛍️' },
+  { sym: 'PLTR', emoji: '🔭' },
+  { sym: 'QQQ',  emoji: '📊' },
+  { sym: 'RDDT', emoji: '🤖' },
+  { sym: 'SHOP', emoji: '🛍️' },
+  { sym: 'SMH',  emoji: '💻' },
+  { sym: 'SNDK', emoji: '💿' },
+  { sym: 'SPY',  emoji: '📊' },
+  { sym: 'TSLA', emoji: '⚡' },
+  { sym: 'TSM',  emoji: '🔧' },
+  { sym: 'UBER', emoji: '🚗' },
+  { sym: 'UNH',  emoji: '🏥' },
+  { sym: 'VIX',  emoji: '📊' },
+  { sym: 'WDC',  emoji: '💾' },
+];
+
+const FUTURES_MAP = {
+  '/ES': 'ES=F', '/NQ': 'NQ=F', '/YM': 'YM=F',
+  '/RTY': 'RTY=F', '/CL': 'CL=F', '/GC': 'GC=F', '/BTC': 'BTC-USD'
+};
+
+// ─── STATE ────────────────────────────────────────────────
+let state = {};   // sym -> { price, gap, pivot, supply, demand, commentary, include, collapsed, emoji, futures }
+let hotList = []; // extra tickers
+
+// ─── INIT ─────────────────────────────────────────────────
+function init() {
+  // First set defaults
+  WATCHLIST.forEach(t => {
+    state[t.sym] = { price: null, gap: null, pivot: '', supply: '', demand: '', commentary: '', conviction: 0, include: false, collapsed: true, emoji: t.emoji, futures: !!t.futures };
+  });
+  // Then load saved levels from localStorage
+  loadSavedLevels();
+  setDateHeader();
+  renderAll();
+  loadPrices();
+}
+
+// ─── PERSISTENCE ──────────────────────────────────────────
+function saveAllLevels() {
+  const toSave = {};
+  Object.entries(state).forEach(([sym, d]) => {
+    toSave[sym] = { pivot: d.pivot, supply: d.supply, demand: d.demand, commentary: d.commentary };
+  });
+  // Save hot tickers too
+  const savedHot = hotList.map(t => ({ sym: t.sym, emoji: t.emoji }));
+  localStorage.setItem('atp_levels', JSON.stringify(toSave));
+  localStorage.setItem('atp_hot', JSON.stringify(savedHot));
+  showStatus('✓ Levels saved!', 'ok');
+  setTimeout(() => document.getElementById('statusBar').classList.remove('show'), 2000);
+}
+
+function loadSavedLevels() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('atp_levels') || '{}');
+    const savedHot = JSON.parse(localStorage.getItem('atp_hot') || '[]');
+    // Restore hot tickers
+    savedHot.forEach(t => {
+      if (!state[t.sym]) {
+        hotList.push(t);
+        state[t.sym] = { price: null, gap: null, pivot: '', supply: '', demand: '', commentary: '', include: false, collapsed: true, emoji: t.emoji || '🔥', futures: false };
+      }
+    });
+    // Restore levels
+    Object.entries(saved).forEach(([sym, d]) => {
+      if (state[sym]) {
+        state[sym].pivot = d.pivot || '';
+        state[sym].supply = d.supply || '';
+        state[sym].demand = d.demand || '';
+        state[sym].commentary = d.commentary || '';
+        state[sym].conviction = d.conviction || 0;
+      }
+    });
+  } catch(e) { console.log('No saved levels yet'); }
+}
+
+function setDateHeader() {
+  const now = new Date();
+  document.getElementById('dateBadge').textContent = now.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric', year:'numeric' });
+  // Simple market hours check (ET)
+  const day = now.getDay();
+  const isWeekend = day === 0 || day === 6;
+  const ms = document.getElementById('marketStatus');
+  if (isWeekend) {
+    ms.textContent = 'MARKET CLOSED'; ms.className = 'market-status market-closed';
+  } else {
+    ms.textContent = 'MARKET DAY'; ms.className = 'market-status market-open';
+  }
+}
+
+// ─── PRICE FETCH ──────────────────────────────────────────
+async function fetchPrice(sym) {
+  const ySym = FUTURES_MAP[sym] || sym;
+  try {
+    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${ySym}?interval=1d&range=2d`, { cache: 'no-store' });
+    const j = await r.json();
+    const meta = j.chart.result[0].meta;
+    const prev = meta.chartPreviousClose || meta.previousClose || 0;
+    const live = meta.preMarketPrice || meta.regularMarketPrice || prev;
+    const gap = prev ? (((live - prev) / prev) * 100).toFixed(2) : null;
+    return { price: live ? live.toFixed(2) : null, gap };
+  } catch { return { price: null, gap: null }; }
+}
+
+async function loadPrices() {
+  const all = [...WATCHLIST, ...hotList];
+  // batch: 3 at a time to avoid rate limits
+  for (let i = 0; i < all.length; i += 3) {
+    const batch = all.slice(i, i + 3);
+    await Promise.all(batch.map(async t => {
+      const d = await fetchPrice(t.sym);
+      if (state[t.sym]) { state[t.sym].price = d.price; state[t.sym].gap = d.gap; }
+      refreshPriceDisplay(t.sym);
+    }));
+    if (i + 3 < all.length) await sleep(300);
+  }
+}
+
+function refreshPriceDisplay(sym) {
+  const s = state[sym]; if (!s) return;
+  const pel = document.getElementById(`price-${sym}`);
+  const gel = document.getElementById(`gap-${sym}`);
+  if (pel) pel.textContent = s.price ? `$${s.price}` : '—';
+  if (gel && s.gap !== null) {
+    const g = parseFloat(s.gap);
+    gel.textContent = `${g >= 0 ? '+' : ''}${s.gap}%`;
+    gel.className = `t-gap ${g > 0.15 ? 'gap-up' : g < -0.15 ? 'gap-down' : 'gap-flat'}`;
+  }
+}
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ─── RENDER ───────────────────────────────────────────────
+function renderAll() {
+  const grid = document.getElementById('tickersGrid');
+  grid.innerHTML = '';
+  [...WATCHLIST, ...hotList].forEach(t => {
+    if (!state[t.sym]) state[t.sym] = { price:null, gap:null, pivot:'', supply:'', demand:'', commentary:'', include:false, collapsed:true, emoji: t.emoji||'🔥', futures:false };
+    grid.appendChild(makeCard(t.sym));
+  });
+}
+
+function makeCard(sym) {
+  const s = state[sym];
+  const div = document.createElement('div');
+  div.className = `ticker-card${s.include ? ' included' : ''}`;
+  div.id = `card-${sym}`;
+
+  const gV = s.gap ? parseFloat(s.gap) : 0;
+  const gClass = gV > 0.15 ? 'gap-up' : gV < -0.15 ? 'gap-down' : 'gap-flat';
+  const gText = s.gap ? `${gV >= 0 ? '+' : ''}${s.gap}%` : '';
+
+  div.innerHTML = `
+    <div class="ticker-header" onclick="toggleCard('${sym}')">
+      <span class="t-emoji">${s.emoji}</span>
+      <span class="t-symbol">$${sym}</span>
+      ${s.futures ? '<span class="futures-tag">FUT</span>' : ''}
+      <span class="t-price" id="price-${sym}">${s.price ? '$'+s.price : '—'}</span>
+      <span class="t-gap ${gClass}" id="gap-${sym}">${gText}</span>
+      <div class="t-right">
+        <label class="include-label" onclick="event.stopPropagation()">
+          <input type="checkbox" id="chk-${sym}" ${s.include?'checked':''} onchange="onInclude('${sym}',this.checked)">
+          Include
+        </label>
+        <span class="t-chevron${s.collapsed?'':' open'}" id="chv-${sym}">▶</span>
+      </div>
+    </div>
+    <div class="ticker-body${s.collapsed?' hidden':''}" id="body-${sym}">
+      <div class="field-wrap">
+        <div class="field-label lbl-pivot">Pivot / Key Level</div>
+        <input class="field-input inp-pivot" id="pivot-${sym}" placeholder="e.g. 247.50" value="${s.pivot}" oninput="save('${sym}','pivot',this.value)">
+      </div>
+      <div class="field-wrap">
+        <div class="field-label lbl-supply">Supply Zone</div>
+        <input class="field-input inp-supply" id="supply-${sym}" placeholder="e.g. 251–253.50" value="${s.supply}" oninput="save('${sym}','supply',this.value)">
+      </div>
+      <div class="field-wrap">
+        <div class="field-label lbl-demand">Demand Zone</div>
+        <input class="field-input inp-demand" id="demand-${sym}" placeholder="e.g. 242–244" value="${s.demand}" oninput="save('${sym}','demand',this.value)">
+      </div>
+      <div class="field-wrap field-full">
+        <div class="field-label">Commentary (optional)</div>
+        <input class="field-input inp-comment" id="comment-${sym}" placeholder="e.g. Strong name pulling back to demand..." value="${s.commentary}" oninput="save('${sym}','commentary',this.value)">
+      </div>
+      <div class="conviction-row">
+        <span class="conviction-label">Conviction</span>
+        <div class="conviction-flames">
+          <button class="flame-btn ${s.conviction >= 1 ? 'active' : ''}" id="flame-${sym}-1" onclick="setConviction('${sym}', 1)">🔥</button>
+          <button class="flame-btn ${s.conviction >= 2 ? 'active' : ''}" id="flame-${sym}-2" onclick="setConviction('${sym}', 2)">🔥</button>
+          <button class="flame-btn ${s.conviction >= 3 ? 'active' : ''}" id="flame-${sym}-3" onclick="setConviction('${sym}', 3)">🔥</button>
+        </div>
+        <span style="font-family:var(--mono);font-size:10px;color:var(--text3)" id="conv-label-${sym}">${s.conviction > 0 ? (s.conviction === 1 ? 'Watch' : s.conviction === 2 ? 'High Conviction' : 'TOP PICK') : 'No flag'}</span>
+      </div>
+      <div id="flow-summary-${sym}" style="display:none;grid-column:1/-1"></div>
+      <div class="news-section">
+        <div class="news-header">
+          <span class="news-title">📰 Latest News</span>
+          <button class="btn-pull-news" id="news-btn-${sym}" onclick="pullNews('${sym}')">Pull News</button>
+        </div>
+        <div class="news-list" id="news-list-${sym}">
+          <div class="news-empty">Click "Pull News" to load headlines</div>
+        </div>
+      </div>
+      <div class="chart-upload-area" id="upload-area-${sym}">
+        <input type="file" accept="image/*" onchange="onChartUpload('${sym}', this)" onclick="event.stopPropagation()">
+        <span class="chart-upload-icon">📸</span>
+        <span class="chart-upload-text" id="upload-text-${sym}">Click or drag TOS chart screenshot here</span>
+        <img class="chart-preview-thumb" id="upload-thumb-${sym}" style="display:none">
+        <button class="chart-clear" id="upload-clear-${sym}" style="display:none" onclick="clearChart('${sym}', event)">✕</button>
+      </div>
+    </div>
+  `;
+  return div;
+}
+
+// ─── INTERACTIONS ─────────────────────────────────────────
+function toggleCard(sym) {
+  state[sym].collapsed = !state[sym].collapsed;
+  document.getElementById(`body-${sym}`).classList.toggle('hidden', state[sym].collapsed);
+  const chv = document.getElementById(`chv-${sym}`);
+  if (chv) chv.className = `t-chevron${state[sym].collapsed ? '' : ' open'}`;
+}
+
+function toggleAll(collapse) {
+  Object.keys(state).forEach(sym => {
+    state[sym].collapsed = collapse;
+    const b = document.getElementById(`body-${sym}`);
+    const c = document.getElementById(`chv-${sym}`);
+    if (b) b.classList.toggle('hidden', collapse);
+    if (c) c.className = `t-chevron${collapse ? '' : ' open'}`;
+  });
+}
+
+function onInclude(sym, val) {
+  state[sym].include = val;
+  const card = document.getElementById(`card-${sym}`);
+  if (card) card.className = `ticker-card${val ? ' included' : ''}`;
+  if (val && state[sym].collapsed) toggleCard(sym);
+}
+
+// ─── NEWS FETCH ───────────────────────────────────────────
+async function pullNews(sym) {
+  const btn = document.getElementById(`news-btn-${sym}`);
+  const list = document.getElementById(`news-list-${sym}`);
+  if (!btn || !list) return;
+
+  btn.disabled = true;
+  btn.textContent = 'Loading...';
+  list.innerHTML = '<div class="news-empty">Fetching headlines...</div>';
+
+  const futuresMap = {
+    '/ES': 'ES=F', '/NQ': 'NQ=F', '/YM': 'YM=F',
+    '/RTY': 'RTY=F', '/CL': 'CL=F', '/GC': 'GC=F', '/BTC': 'BTC-USD'
+  };
+  const ySym = futuresMap[sym] || sym;
+
+  try {
+    const targetUrl = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(ySym)}&newsCount=5&quotesCount=0`;
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000); // 12 second timeout
+
+    const res = await fetch(proxyUrl, { signal: controller.signal });
+    clearTimeout(timeout);
+    const raw = await res.json();
+    const newsJson = JSON.parse(raw.contents);
+    const articles = (newsJson?.news || []).map(a => ({
+      title: a.title,
+      link: a.link,
+      publisher: a.publisher || '',
+      age: a.providerPublishTime ? timeAgo(a.providerPublishTime * 1000) : '',
+    }));
+
+    if (!articles.length) {
+      list.innerHTML = '<div class="news-empty">No recent news found</div>';
+    } else {
+      // Store articles in state for later use
+      state[sym].newsArticles = articles.slice(0, 4);
+      state[sym].newsArticles = articles.slice(0, 4);
+      list.innerHTML = articles.slice(0, 4).map((a, i) => {
+        const age = a.age || (a.providerPublishTime ? timeAgo(a.providerPublishTime * 1000) : '');
+        return `<div class="news-item">
+          <label class="news-check-row">
+            <input type="checkbox" class="news-check" onchange="toggleNewsItem('${sym}', ${i}, this.checked)" style="accent-color:var(--accent);cursor:pointer;flex-shrink:0">
+            <div>
+              ${a.link ? `<a class="news-headline" href="${a.link}" target="_blank">${a.title}</a>` : `<span class="news-headline">${a.title}</span>`}
+              <span class="news-meta">${a.publisher || ''} ${age ? '· ' + age : ''}</span>
+            </div>
+          </label>
+        </div>`;
+      }).join('');
+    }
+  } catch(e) {
+    list.innerHTML = '<div class="news-empty">Could not load news — try again</div>';
+  }
+
+  btn.disabled = false;
+  btn.textContent = '↻ Refresh';
+}
+
+function toggleNewsItem(sym, idx, checked) {
+  if (!state[sym].selectedNews) state[sym].selectedNews = {};
+  if (checked) {
+    const a = state[sym].newsArticles[idx];
+    const age = a.providerPublishTime ? timeAgo(a.providerPublishTime * 1000) : '';
+    state[sym].selectedNews[idx] = `📰 ${a.title} — ${a.publisher || ''}${age ? ' · ' + age : ''}`;
+  } else {
+    delete state[sym].selectedNews[idx];
+  }
+}
+
+function timeAgo(ts) {
+  const diff = Date.now() - ts;
+  const mins = Math.floor(diff / 60000);
+  const hrs = Math.floor(mins / 60);
+  const days = Math.floor(hrs / 24);
+  if (days > 0) return `${days}d ago`;
+  if (hrs > 0) return `${hrs}h ago`;
+  return `${mins}m ago`;
+}
+
+function setConviction(sym, level) {
+  // Toggle off if clicking same level
+  state[sym].conviction = state[sym].conviction === level ? 0 : level;
+  const c = state[sym].conviction;
+  // Update flame buttons
+  for (let i = 1; i <= 3; i++) {
+    const btn = document.getElementById(`flame-${sym}-${i}`);
+    if (btn) btn.className = `flame-btn${c >= i ? ' active' : ''}`;
+  }
+  // Update label
+  const lbl = document.getElementById(`conv-label-${sym}`);
+  if (lbl) lbl.textContent = c === 0 ? 'No flag' : c === 1 ? 'Watch' : c === 2 ? 'High Conviction' : 'TOP PICK';
+  // Auto-save
+  const toSave = {};
+  Object.entries(state).forEach(([s, d]) => {
+    toSave[s] = { pivot: d.pivot, supply: d.supply, demand: d.demand, commentary: d.commentary, conviction: d.conviction };
+  });
+  localStorage.setItem('atp_levels', JSON.stringify(toSave));
+}
+
+function save(sym, field, val) {
+  state[sym][field] = val;
+  // Auto-save to localStorage
+  const toSave = {};
+  Object.entries(state).forEach(([s, d]) => {
+    toSave[s] = { pivot: d.pivot, supply: d.supply, demand: d.demand, commentary: d.commentary, conviction: d.conviction || 0 };
+  });
+  localStorage.setItem('atp_levels', JSON.stringify(toSave));
+}
+
+function addHot() {
+  const inp = document.getElementById('addInput');
+  const sym = inp.value.trim().toUpperCase().replace(/[^A-Z0-9\/]/g, '');
+  if (!sym) return;
+  if (state[sym]) {
+    // Already exists — just include + expand
+    state[sym].include = true;
+    state[sym].collapsed = false;
+    const chk = document.getElementById(`chk-${sym}`);
+    if (chk) { chk.checked = true; onInclude(sym, true); }
+    document.getElementById(`card-${sym}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    inp.value = '';
+    return;
+  }
+  hotList.push({ sym, emoji: '🔥' });
+  state[sym] = { price:null, gap:null, pivot:'', supply:'', demand:'', commentary:'', conviction:0, include:true, collapsed:false, emoji:'🔥', futures:false };
+  renderAll();
+  fetchPrice(sym).then(d => { state[sym].price = d.price; state[sym].gap = d.gap; refreshPriceDisplay(sym); });
+  inp.value = '';
+  setTimeout(() => document.getElementById(`card-${sym}`)?.scrollIntoView({ behavior:'smooth', block:'center' }), 100);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('addInput').addEventListener('keydown', e => { if (e.key === 'Enter') addHot(); });
+  document.getElementById('introText').addEventListener('input', function() {
+    document.getElementById('introCount').textContent = `${this.value.length} chars`;
+  });
+});
+
+// ─── CHART UPLOADS ───────────────────────────────────────
+function onChartUpload(sym, input) {
+  const file = input.files[0];
+  if (!file) return;
+  state[sym].chartFile = file;
+  const url = URL.createObjectURL(file);
+  state[sym].chartUrl = url;
+  const area = document.getElementById(`upload-area-${sym}`);
+  const text = document.getElementById(`upload-text-${sym}`);
+  const thumb = document.getElementById(`upload-thumb-${sym}`);
+  const clear = document.getElementById(`upload-clear-${sym}`);
+  if (area) area.classList.add('has-image');
+  if (text) { text.textContent = file.name; text.classList.add('ready'); }
+  if (thumb) { thumb.src = url; thumb.style.display = 'block'; }
+  if (clear) clear.style.display = 'block';
+}
+
+function clearChart(sym, e) {
+  e.stopPropagation();
+  state[sym].chartFile = null;
+  state[sym].chartUrl = null;
+  const area = document.getElementById(`upload-area-${sym}`);
+  const text = document.getElementById(`upload-text-${sym}`);
+  const thumb = document.getElementById(`upload-thumb-${sym}`);
+  const clear = document.getElementById(`upload-clear-${sym}`);
+  const input = area?.querySelector('input[type="file"]');
+  if (area) area.classList.remove('has-image');
+  if (text) { text.textContent = 'Click or drag TOS chart screenshot here'; text.classList.remove('ready'); }
+  if (thumb) { thumb.src = ''; thumb.style.display = 'none'; }
+  if (clear) clear.style.display = 'none';
+  if (input) input.value = '';
+}
+
+// ─── TOS LINK ─────────────────────────────────────────────
+function onTosInput() {
+  const v = document.getElementById('tosLink').value.trim();
+  const b = document.getElementById('tosBadge');
+  if (v) { b.textContent = '✓ Link set'; b.className = 'tos-badge set'; }
+  else   { b.textContent = 'No link';    b.className = 'tos-badge empty'; }
+}
+
+function clearTos() { document.getElementById('tosLink').value = ''; onTosInput(); }
+
+// ─── NEWSLETTER BUILD ─────────────────────────────────────
+function buildText() {
+  const intro = document.getElementById('introText').value.trim();
+  const tos   = document.getElementById('tosLink').value.trim();
+  const included = Object.entries(state).filter(([, d]) => d.include);
+
+  const lines = [];
+  if (intro) { lines.push(intro); lines.push(''); }
+
+  included.forEach(([sym, d]) => {
+    const tickerLines = [];
+    const flames = d.conviction > 0 ? '🔥'.repeat(d.conviction) + ' ' : '';
+    let header = `${flames}${d.emoji} $${sym}`;
+    if (d.commentary) header += ` ${d.commentary}`;
+    tickerLines.push(header);
+    if (d.pivot)  tickerLines.push(`• ${d.pivot} pivot`);
+    if (d.supply) tickerLines.push(`• Hold → ${d.supply} supply`);
+    if (d.demand) tickerLines.push(`• Lose → ${d.demand} demand`);
+    // Add flow lines
+    getFlowLines(sym).forEach(fl => tickerLines.push(fl));
+    // Add selected news headlines
+    if (d.selectedNews && Object.keys(d.selectedNews).length > 0) {
+      Object.values(d.selectedNews).forEach(headline => tickerLines.push(headline));
+    }
+    lines.push(tickerLines.join('\n'));
+    lines.push(''); // blank line between tickers
+  });
+
+  if (tos) { lines.push(''); lines.push(`📊 TOS Grid → ${tos}`); }
+
+  return lines.join('\n');
+}
+
+function updatePreview() {
+  const text = buildText();
+  document.getElementById('previewBody').textContent = text || '(no tickers included yet — check "Include" on the tickers you want)';
+}
+
+// ─── DISCORD POST ─────────────────────────────────────────
+async function sendDiscordText(content) {
+  await Promise.all(WEBHOOKS.map(async wh => {
+    const res = await fetch(wh, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content, username: 'Alpha Trading Pro · Morning Newsletter' })
+    });
+    if (!res.ok) throw new Error(`Discord ${res.status}: ${await res.text()}`);
+  }));
+}
+
+async function sendDiscordImage(file, sym) {
+  await Promise.all(WEBHOOKS.map(async wh => {
+    const form = new FormData();
+    form.append('file', file, file.name);
+    form.append('payload_json', JSON.stringify({ username: 'Alpha Trading Pro · Morning Newsletter' }));
+    const res = await fetch(wh, { method: 'POST', body: form });
+    if (!res.ok) throw new Error(`Discord image error ${res.status}: ${await res.text()}`);
+  }));
+}
+
+async function postToDiscord() {
+  const intro = document.getElementById('introText').value.trim();
+  const tos   = document.getElementById('tosLink').value.trim();
+  const included = Object.entries(state).filter(([, d]) => d.include);
+
+  if (!included.length) { showStatus('No tickers included — check "Include" on the tickers you want to post.', 'err'); return; }
+
+  const btn = document.getElementById('postBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> &nbsp;Posting to Discord...';
+  showStatus('Sending...', 'info');
+
+  try {
+    // 1. Send intro block
+    if (intro) {
+      await sendDiscordText(intro);
+      await sleep(800);
+    }
+
+    // 2. Send each ticker text + chart image
+    for (const [sym, d] of included) {
+      const tickerLines = [];
+      const flames = d.conviction > 0 ? '🔥'.repeat(d.conviction) + ' ' : '';
+      let header = `${flames}${d.emoji} $${sym}`;
+      if (d.commentary) header += ` ${d.commentary}`;
+      tickerLines.push(header);
+      if (d.pivot)  tickerLines.push(`• ${d.pivot} pivot`);
+      if (d.supply) tickerLines.push(`• Hold → ${d.supply} supply`);
+      if (d.demand) tickerLines.push(`• Lose → ${d.demand} demand`);
+      // Add flow lines
+      getFlowLines(sym).forEach(fl => tickerLines.push(fl));
+      // Add selected news headlines
+      if (d.selectedNews && Object.keys(d.selectedNews).length > 0) {
+        Object.values(d.selectedNews).forEach(headline => tickerLines.push(headline));
+      }
+      await sendDiscordText(tickerLines.join('\n'));
+      await sleep(600);
+      if (d.chartFile) {
+        await sendDiscordImage(d.chartFile, sym);
+        await sleep(800);
+      }
+      // Always send blank spacer between tickers
+      await sendDiscordText('** **');
+      await sleep(400);
+    }
+
+    // 3. Send TOS link at end
+    if (tos) {
+      await sleep(400);
+      await sendDiscordText(`📊 TOS Grid → ${tos}`);
+    }
+
+    showStatus('✓ Posted to Discord successfully!', 'ok');
+  } catch(e) {
+    showStatus(`✗ Failed: ${e.message}`, 'err');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="22" height="16" viewBox="0 0 71 55" fill="none"><path d="M60.1 4.9A58.6 58.6 0 0 0 45.5.7a40.8 40.8 0 0 0-1.8 3.7 54.2 54.2 0 0 0-16.3 0A41 41 0 0 0 25.5.7 58.5 58.5 0 0 0 10.9 4.9C1.6 18.7-.9 32.2.3 45.5a59 59 0 0 0 18 9.1 44.6 44.6 0 0 0 3.9-6.3 38.3 38.3 0 0 1-6.1-2.9l1.5-1.1a42.2 42.2 0 0 0 36 0l1.5 1.1a38.5 38.5 0 0 1-6.1 2.9 44.3 44.3 0 0 0 3.9 6.3 58.8 58.8 0 0 0 18-9 58 58 0 0 0-10.8-40.6ZM23.7 37.3c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.5 0 6.4 3.2 6.3 7.2 0 4-2.8 7.2-6.3 7.2Zm23.6 0c-3.5 0-6.4-3.2-6.4-7.2s2.8-7.2 6.4-7.2c3.5 0 6.4 3.2 6.3 7.2 0 4-2.8 7.2-6.3 7.2Z" fill="currentColor"/></svg> Post to Discord → #morning-newsletter`;
+}
+
+function copyForReddit() {
+  const text = buildText();
+  if (!text.trim()) { showStatus('Nothing to copy — fill in some levels first.', 'err'); return; }
+  navigator.clipboard.writeText(text).then(() => {
+    window.open('https://www.reddit.com/r/TradeWithLevels/submit?selftext=true', '_blank');
+    showStatus('✓ Copied! Reddit post page opened — paste and submit.', 'ok');
+  }).catch(() => {
+    showStatus('✗ Could not copy — please use the Preview and copy manually.', 'err');
+  });
+}
+
+function clearAllLevels() {
+  if (!confirm('Clear all saved levels? This cannot be undone.')) return;
+  localStorage.removeItem('atp_levels');
+  localStorage.removeItem('atp_hot');
+  Object.keys(state).forEach(sym => {
+    state[sym].pivot = '';
+    state[sym].supply = '';
+    state[sym].demand = '';
+    state[sym].commentary = '';
+    state[sym].include = false;
+    // Update DOM fields
+    ['pivot','supply','demand','comment'].forEach(f => {
+      const el = document.getElementById(`${f}-${sym}`);
+      if (el) el.value = '';
+    });
+    const chk = document.getElementById(`chk-${sym}`);
+    if (chk) { chk.checked = false; onInclude(sym, false); }
+  });
+  showStatus('All levels cleared.', 'info');
+}
+
+// ─── FLOW CSV PARSER ──────────────────────────────────────
+let flowData = {}; // sym -> { totalPremium, calls, puts, whaleFlows, goldenSweeps, unusual }
+
+function parsePremium(str) {
+  if (!str) return 0;
+  return parseFloat(str.replace(/[$,""]/g, '')) || 0;
+}
+
+function loadFlowCSV(input) {
+  const file = input.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const text = e.target.result;
+    const lines = text.split('\n').slice(1); // skip header
+
+    flowData = {};
+    let totalRows = 0;
+
+    lines.forEach(line => {
+      if (!line.trim()) return;
+      // Parse CSV properly handling quoted fields
+      const cols = [];
+      let cur = '', inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        if (line[i] === '"') { inQ = !inQ; }
+        else if (line[i] === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+        else { cur += line[i]; }
+      }
+      cols.push(cur.trim());
+
+      const sym = cols[2]?.trim();
+      if (!sym) return;
+      totalRows++;
+
+      const premium = parsePremium(cols[12]);
+      const contractType = cols[6]?.trim();
+      const isGolden = cols[19]?.trim() === 'Yes';
+      const isUnusual = cols[18]?.trim() === 'Yes';
+      const tradeType = cols[13]?.trim();
+
+      if (!flowData[sym]) {
+        flowData[sym] = { totalPremium: 0, calls: 0, puts: 0, callPremium: 0, putPremium: 0, whaleFlows: [], goldenSweeps: 0, unusual: 0 };
+      }
+
+      const d = flowData[sym];
+      d.totalPremium += premium;
+
+      if (contractType === 'CALL') { d.calls++; d.callPremium += premium; }
+      else if (contractType === 'PUT') { d.puts++; d.putPremium += premium; }
+
+      if (isGolden) d.goldenSweeps++;
+      if (isUnusual) d.unusual++;
+      if (premium >= 1000000) {
+        d.whaleFlows.push({ premium, contractType, tradeType });
+      }
+    });
+
+    // Update UI
+    document.getElementById('csvDropArea').classList.add('loaded');
+    document.getElementById('csvLabel').textContent = `✓ ${file.name}`;
+    document.getElementById('csvSub').textContent = `${totalRows.toLocaleString()} trades loaded · ${Object.keys(flowData).length} tickers`;
+    document.getElementById('csvClear').style.display = 'block';
+
+    // Show summary stats
+    const statsEl = document.getElementById('csvStats');
+    statsEl.style.display = 'flex';
+    const totalPrem = Object.values(flowData).reduce((a,b) => a + b.totalPremium, 0);
+    const whaleCount = Object.values(flowData).reduce((a,b) => a + b.whaleFlows.length, 0);
+    const sweepCount = Object.values(flowData).reduce((a,b) => a + b.goldenSweeps, 0);
+    statsEl.innerHTML = `
+      <div class="csv-stat highlight">💰 $${(totalPrem/1000000).toFixed(1)}M total premium</div>
+      <div class="csv-stat">🐋 ${whaleCount} whale flows ($1M+)</div>
+      <div class="csv-stat">⚡ ${sweepCount} golden sweeps</div>
+      <div class="csv-stat">${Object.keys(flowData).length} tickers</div>
+    `;
+
+    // Apply flow tags to watchlist tickers
+    applyFlowTags();
+  };
+  reader.readAsText(file);
+}
+
+function clearFlowCSV(e) {
+  e.stopPropagation();
+  flowData = {};
+  document.getElementById('csvDropArea').classList.remove('loaded');
+  document.getElementById('csvLabel').textContent = 'Click or drag QuantData CSV file here';
+  document.getElementById('csvSub').textContent = 'Auto-tags tickers with 🐋 🏛️ 🎯 based on flow data';
+  document.getElementById('csvClear').style.display = 'none';
+  document.getElementById('csvStats').style.display = 'none';
+  // Clear all flow summaries
+  document.querySelectorAll('[id^="flow-summary-"]').forEach(el => { el.style.display = 'none'; el.innerHTML = ''; });
+}
+
+function formatMoney(n) {
+  if (n >= 1000000) return `$${(n/1000000).toFixed(1)}M`;
+  if (n >= 1000) return `$${(n/1000).toFixed(0)}K`;
+  return `$${n.toFixed(0)}`;
+}
+
+function applyFlowTags() {
+  Object.entries(flowData).forEach(([sym, d]) => {
+    const el = document.getElementById(`flow-summary-${sym}`);
+    if (!el) return;
+
+    const tags = [];
+
+    // Whale flows
+    if (d.whaleFlows.length > 0) {
+      const biggest = d.whaleFlows.sort((a,b) => b.premium - a.premium)[0];
+      tags.push(`<span class="flow-tag whale">🐋 ${formatMoney(biggest.premium)} ${biggest.contractType} ${biggest.tradeType || ''}</span>`);
+    }
+
+    // Golden sweeps
+    if (d.goldenSweeps > 0) {
+      tags.push(`<span class="flow-tag sweep">⚡ ${d.goldenSweeps} golden sweep${d.goldenSweeps > 1 ? 's' : ''}</span>`);
+    }
+
+    // Unusual
+    if (d.unusual > 0) {
+      tags.push(`<span class="flow-tag unusual">🎯 ${d.unusual} unusual</span>`);
+    }
+
+    // Bias
+    if (d.totalPremium > 0) {
+      const callPct = Math.round((d.callPremium / (d.callPremium + d.putPremium)) * 100);
+      if (callPct >= 65) tags.push(`<span class="flow-tag bullish">📈 ${callPct}% bullish flow</span>`);
+      else if (callPct <= 35) tags.push(`<span class="flow-tag bearish">📉 ${100-callPct}% bearish flow</span>`);
+    }
+
+    // Total premium
+    if (d.totalPremium >= 500000) {
+      tags.push(`<span class="flow-tag">💰 ${formatMoney(d.totalPremium)} total</span>`);
+    }
+
+    if (tags.length > 0) {
+      el.style.display = 'block';
+      el.innerHTML = `<div class="flow-tags" style="grid-column:1/-1;padding:0 0 4px 0">${tags.join('')}</div>`;
+    }
+  });
+}
+
+// Add flow lines to Discord post per ticker
+function getFlowLines(sym) {
+  const d = flowData[sym];
+  if (!d) return [];
+  const lines = [];
+
+  if (d.whaleFlows.length > 0) {
+    const biggest = d.whaleFlows.sort((a,b) => b.premium - a.premium)[0];
+    lines.push(`🐋 ${formatMoney(biggest.premium)} ${biggest.contractType} flow yesterday`);
+  }
+  if (d.goldenSweeps > 0) lines.push(`⚡ ${d.goldenSweeps} golden sweep${d.goldenSweeps > 1 ? 's' : ''} yesterday`);
+  if (d.unusual > 0) lines.push(`🎯 ${d.unusual} unusual flow${d.unusual > 1 ? 's' : ''} yesterday`);
+  const callPct = d.callPremium + d.putPremium > 0 ? Math.round((d.callPremium / (d.callPremium + d.putPremium)) * 100) : 50;
+  if (callPct >= 65) lines.push(`📈 ${callPct}% bullish premium flow`);
+  else if (callPct <= 35) lines.push(`📉 ${100-callPct}% bearish premium flow`);
+
+  return lines;
+}
+
+function showStatus(msg, type) {
+  const el = document.getElementById('statusBar');
+  el.textContent = msg;
+  el.className = `status show ${type}`;
+}
+
+// ─── START ────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
