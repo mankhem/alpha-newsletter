@@ -1,0 +1,26 @@
+name: EOD Recap
+
+on:
+  schedule:
+    # Runs weekdays at 20:35 UTC = 4:35pm ET during Daylight Time (EDT, roughly Mar–Nov).
+    # NOTE: During Standard Time (EST, roughly Nov–Mar) this fires at 3:35pm ET instead —
+    # add a second cron line below for 21:35 UTC if you want it to stay pinned to 4:35pm ET
+    # year-round, or just adjust manually when the clocks change.
+    - cron: '35 20 * * 1-5'
+  workflow_dispatch: {} # lets you trigger it manually from the GitHub Actions tab to test
+
+jobs:
+  recap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run EOD recap
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_WEBHOOKS: ${{ secrets.DISCORD_WEBHOOKS }}
+        run: node scripts/eod-recap.mjs

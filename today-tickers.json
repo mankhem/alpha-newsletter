@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-25",
+  "generatedAt": "2026-08-25T12:30:00.000Z",
+  "tickers": {
+    "AAPL": {
+      "emoji": "🍏",
+      "commentary": "rejected the mean yesterday, watching 309-311",
+      "conviction": 1,
+      "pivot": "307.67",
+      "supply": "309.42-311.40",
+      "demand": "305.02-302.07",
+      "flow": ["🐋 $2.8M CALL flow yesterday · $312.5C exp 8/24", "🎯 29 unusual flows yesterday", "📈 72% bullish premium flow"]
+    }
+  }
+}
