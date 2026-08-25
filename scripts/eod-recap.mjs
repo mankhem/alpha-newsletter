@@ -46,9 +46,20 @@ if (!symbols.length) {
 }
 
 // ─── 2. Pull today's price action from Yahoo Finance ───────────────────────
+// This tool's futures tickers use a leading slash (e.g. /ES); Yahoo Finance
+// uses its own continuous-contract symbols instead. Map between the two.
+const FUTURES_MAP = {
+  '/BTC': 'BTC-USD',
+  '/CL': 'CL=F',
+  '/ES': 'ES=F',
+  '/GC': 'GC=F',
+  '/NQ': 'NQ=F',
+  '/RTY': 'RTY=F',
+  '/YM': 'YM=F'
+};
+
 async function fetchQuote(sym) {
-  // Futures / indices in this tool use a leading slash (e.g. /ES) — Yahoo uses its own symbol, skip those gracefully.
-  const ySym = sym.startsWith('/') ? null : sym;
+  const ySym = sym.startsWith('/') ? (FUTURES_MAP[sym] || null) : sym;
   if (!ySym) return null;
 
   try {
@@ -145,7 +156,8 @@ Rules:
 - Casual trader shorthand, lowercase mid-sentence, minimal punctuation, like a real person typing fast between charts — NOT corporate or polished.
 - Past tense for EOD (this already happened today), not future tense.
 - Use "status vs levels" to say plainly whether it held, lost, or reached targets.
-- Keep each ticker to 2-4 lines max: one line of commentary, then closing price + high/low, then hold/lose result.
+- Trade both directions. When a ticker lost its pivot or broke demand, call out the short setup, not just "it lost pivot" — e.g. what level a short would trigger below, or where it could retest from underneath. When it held pivot or reached supply, frame the long side the same way. Match how a real trader who plays both sides would talk, not a passive observer.
+- Keep each ticker to 2-4 lines max: one line of commentary, then closing price + high/low, then hold/lose result with the actionable read (long or short).
 - Use the same emoji style (🔥 for conviction, ticker-relevant emoji, 🐋 for flow, 🎯 for flow count) only when the source data is provided — never invent flow numbers or emojis not given to you.
 - Do not invent numbers you were not given. If a quote is N/A, say "no quote available" for that ticker instead of guessing.`;
 
