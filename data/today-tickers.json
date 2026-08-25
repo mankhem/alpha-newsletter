@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-25",
+  "generatedAt": "2026-08-25T18:54:12.822Z",
+  "tickers": {
+    "/ES": {
+      "emoji": "📊",
+      "commentary": "came to demand and held it to the penny and bounced this morning want to see break supply zone and hold",
+      "conviction": 0,
+      "pivot": "7680.25",
+      "supply": "7724-7739 7764",
+      "demand": "7657-7632 7563-7541",
+      "flow": []
+    },
+    "AAPL": {
+      "emoji": "🍏",
+      "commentary": "rejected the mean yesterday this morning lets see if we can hold 309-311 cant we go to pivot and then we see ",
+      "conviction": 1,
+      "pivot": "307.67",
+      "supply": "309.42-311.40 315-317.40",
+      "demand": "305.02-302.07",
+      "flow": []
+    },
+    "AMD": {
+      "emoji": "🧠",
+      "commentary": "came to demand and held lets see if we can go to 476 and reclaim it  got some upgrades this morning ",
+      "conviction": 3,
+      "pivot": "",
+      "supply": "476 495-502",
+      "demand": "463-455.30 437-424",
+      "flow": []
+    },
+    "AMZN": {
+      "emoji": "📦",
+      "commentary": "nice hold yesterday at demand this morning pivot holds we push to 266.63 and then we see",
+      "conviction": 1,
+      "pivot": "262.07",
+      "supply": "266.63 ",
+      "demand": "257.04 255.19",
+      "flow": []
+    },
+    "AVGO": {
+      "emoji": "⚡",
+      "commentary": "in a tight squeeze, holds pivot we go to supply zone we cant hold pivot we go lower to demand zone ",
+      "conviction": 2,
+      "pivot": "363.83",
+      "supply": "369.48-374.23",
+      "demand": "357-356 353",
+      "flow": []
+    },
+    "COIN": {
+      "emoji": "🪙",
+      "commentary": "holds this pivot we push back to 187 cant hold pivot we go to demand zone of 175 ish ",
+      "conviction": 3,
+      "pivot": "179.30",
+      "supply": "187.39 190.96-192.50",
+      "demand": "175.55-174.44",
+      "flow": []
+    },
+    "CRWV": {
+      "emoji": "🤖",
+      "commentary": "at key demand, cant hold this demand we go to 79.46 cant hold that 68.51-67.15 comes to play , like longs at this demand zone ",
+      "conviction": 3,
+      "pivot": "",
+      "supply": "91.02 93.50-94.82",
+      "demand": "84.81-87.41 79.46",
+      "flow": []
+    },
+    "GOOGL": {
+      "emoji": "🔎",
+      "commentary": "nice squeeze broke on it yesterday this morning holds pivot we going to yesterdays hod holds, that we going to 355 ish ",
+      "conviction": 3,
+      "pivot": "349",
+      "supply": "355.79",
+      "demand": "347.25 345.27",
+      "flow": []
+    },
+    "META": {
+      "emoji": "📱",
+      "commentary": "broke out that tight squeeze i mentioned yesterday, want to see holds this demand zone, holds we go to 575 where the mean is",
+      "conviction": 3,
+      "pivot": "",
+      "supply": "575",
+      "demand": "563-557",
+      "flow": []
+    },
+    "TSLA": {
+      "emoji": "⚡",
+      "commentary": "trading below key level, we reclaim the 352 i like long on this name, if cant we go back to the mean ",
+      "conviction": 3,
+      "pivot": "",
+      "supply": "351-352.14 264",
+      "demand": "342.11",
+      "flow": []
+    }
+  }
+}
