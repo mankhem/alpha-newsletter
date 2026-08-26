@@ -119,10 +119,70 @@ function evaluateTicker(sym, levels, quote) {
 
 const evaluated = symbols.map(sym => evaluateTicker(sym, tickers[sym], quotes[sym]));
 
-// ─── 4. Ask Claude to draft the recap in your voice ─────────────────────────
 const dateLabel = new Date().toLocaleDateString('en-US', {
   timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric'
 });
+
+
+// ─── Build the scannable snapshot table (member-requested format) ──────────
+// Computed directly from real prices/levels, not AI-generated, so it's
+// always accurate — one row per ticker: pivot, upside/downside touched, result.
+function classify(t) {
+  const q = t.quote;
+  if (!q || q.price == null) return { touched: '— no data', result: 'NO DATA' };
+
+  const supply = parseFirstNumber(t.levels.supply);
+  const demand = parseFirstNumber(t.levels.demand);
+  const hi = q.dayHigh;
+  const lo = q.dayLow;
+
+  const hitSupply = supply != null && hi != null && hi >= supply;
+  const hitDemand = demand != null && lo != null && lo <= demand;
+
+  let touched = '—';
+  if (hitSupply && hitDemand) touched = `up ${supply} & down ${demand}`;
+  else if (hitSupply) touched = `up to ${hi.toFixed(2)}`;
+  else if (hitDemand) touched = `down to ${lo.toFixed(2)}`;
+  else touched = 'stayed in range';
+
+  const result = (hitSupply || hitDemand) ? 'SUCCESS' : 'NOTHING BURGER';
+  return { touched, result };
+}
+
+function buildSummaryTable(evaluated) {
+  const rows = evaluated.map(t => {
+    const pivot = t.levels.pivot || '—';
+    const close = t.quote?.price != null ? `$${t.quote.price.toFixed(2)}` : 'N/A';
+    const { touched, result } = classify(t);
+    return { sym: t.sym, pivot, close, touched, result };
+  });
+
+  const col = (header, key, min = 6) =>
+    Math.max(min, header.length, ...rows.map(r => String(r[key]).length)) + 2;
+
+  const widths = {
+    sym: col('TICKER', 'sym'),
+    pivot: col('PIVOT', 'pivot'),
+    close: col('CLOSE', 'close'),
+    touched: col('MOVED', 'touched', 10),
+    result: col('RESULT', 'result')
+  };
+
+  const pad = (str, w) => String(str).padEnd(w);
+  let out = '```\n';
+  out += pad('TICKER', widths.sym) + pad('PIVOT', widths.pivot) + pad('CLOSE', widths.close) + pad('MOVED', widths.touched) + 'RESULT\n';
+  out += '-'.repeat(widths.sym + widths.pivot + widths.close + widths.touched + widths.result) + '\n';
+  rows.forEach(r => {
+    out += pad(r.sym, widths.sym) + pad(r.pivot, widths.pivot) + pad(r.close, widths.close) + pad(r.touched, widths.touched) + r.result + '\n';
+  });
+  out += '```';
+  return out;
+}
+
+const summaryTable = `📊 **EOD SNAPSHOT — ${dateLabel}**\n${buildSummaryTable(evaluated)}`;
+
+
+// ─── 4. Ask Claude to draft the recap in your voice ─────────────────────────
 
 const tickerBlock = evaluated.map(t => {
   const q = t.quote;
@@ -223,7 +283,11 @@ async function postToDiscord(content) {
   }
 }
 
+await postToDiscord(summaryTable);
+await new Promise(r => setTimeout(r, 500));
 await postToDiscord(recapText);
 console.log('EOD recap posted successfully.');
+console.log('---');
+console.log(summaryTable);
 console.log('---');
 console.log(recapText);
