@@ -1,86 +1,68 @@
 {
-  "date": "2026-09-09",
-  "generatedAt": "2026-09-09T11:07:44.248Z",
+  "date": "2026-09-10",
+  "generatedAt": "2026-09-10T09:59:54.775Z",
   "tickers": {
     "/ES": {
       "emoji": "📊",
-      "commentary": "rejecting the mean and below pivot at demand, holds here can long cant hold we going to 7618 and then we see (vix above 16)",
+      "commentary": "back at demand lets see if we hold this demand or go lower ",
       "conviction": 1,
-      "pivot": "7680.25",
+      "pivot": "",
       "supply": "7705 7724-7739",
       "demand": "7657-7632 7618",
       "flow": []
     },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "trading at the mean and this demand, cant hold 315 we going to 311-309 demand zone ",
+      "commentary": "nice hold on demand and got bought up , this morning want to see break and hold supply zone ",
       "conviction": 0,
       "pivot": "",
       "supply": "319.35-320.28 322.37 ",
-      "demand": "315-317.40 311.40-309.42",
+      "demand": "317.40-315",
       "flow": []
     },
     "AMD": {
       "emoji": "🧠",
-      "commentary": "nice move on her yesterday , this morning pulling back cant holld this demand we going to 491.12 cant hold that then 478 breaks 502 and yesterdays hod we can fly out ",
+      "commentary": "nice move yesterdays holds pivot we go back to supply zone, cant hold pivot we go to demand zone ",
       "conviction": 0,
-      "pivot": "",
-      "supply": "514.67 528-530",
-      "demand": "491 478.83 463-455",
-      "flow": []
-    },
-    "AMZN": {
-      "emoji": "📦",
-      "commentary": "at demand here cant hold demand we can get a squeeze fire to downside till 251.93 ish and have a gap below to fill",
-      "conviction": 0,
-      "pivot": "",
-      "supply": "262.07 266.63-267.56",
-      "demand": "255.19-257.04  251.93 250.43",
-      "flow": []
-    },
-    "COIN": {
-      "emoji": "🪙",
-      "commentary": "pulling back to bottom holds pivot we can push back to upside cant hold demand we go back to 175 demand zone ",
-      "conviction": 0,
-      "pivot": "179.30",
-      "supply": "187.39 190.96-194.01",
-      "demand": "175.55-174.44",
+      "pivot": "514.67",
+      "supply": "528-530",
+      "demand": "502.36-495.35",
       "flow": []
     },
     "GOOGL": {
       "emoji": "🔎",
-      "commentary": "having a hard time to catch the bid trading around the 200sma, cant hold pivot we can flush to 332 cant hold that big dump can come ",
+      "commentary": "has been weak, needs to break pivot and hold for bullish, cant reclaim pivot we go back to 328.83 then 324 ish ",
       "conviction": 0,
-      "pivot": "334.52",
-      "supply": "338.57 340.49-342.32",
-      "demand": "332.82 328.83",
+      "pivot": "331.82",
+      "supply": "334.52 338.57 340.49-342.32",
+      "demand": "328.83 324.44",
       "flow": []
     },
     "META": {
       "emoji": "📱",
-      "commentary": "nice squeeze fired on her on premarket, yesterday mentioned 625c can work if you held it overnight congrats ",
+      "commentary": "nice momentum on her, breaks and holds pivot we go higher, rejects pivot we go back to 643 and then we see",
       "conviction": 3,
-      "pivot": "623.73",
-      "supply": "628.28-636.55 643.20 660",
-      "demand": "619 608 600",
+      "pivot": "660.30",
+      "supply": "672.77 677.86",
+      "demand": "643.20 636-628",
+      "flow": []
+    },
+    "NVDA": {
+      "emoji": "🖥️",
+      "commentary": "trading still above the mean, pivot breaks we go to supply zone, cant hold pivot we go to 221 cant hold that then 218.18-214 demand comes to play ",
+      "conviction": 3,
+      "pivot": "224.76",
+      "supply": "227.49-230.47",
+      "demand": "221.60 218.18-214.80",
       "flow": []
     },
     "TSLA": {
       "emoji": "⚡",
-      "commentary": "nice move yesterday this morning , holds demand we go back to pivot and supply levels, cant hold demand we go lower to 358 then 352",
+      "commentary": "building momentum breaks and holds pivot we go to 372-377 supply zone, rejects pivot we go to 364-363 demand zone ",
       "conviction": 3,
       "pivot": "366.50",
       "supply": "368.60 372.90-377.22",
       "demand": "364-363 358",
-      "flow": []
-    },
-    "TSM": {
-      "emoji": "🔧",
-      "commentary": "inside supply and demand, comes to demand and holds can be long, cant hold demand we go lower to 416 ish  (request from Krishna)",
-      "conviction": 0,
-      "pivot": "",
-      "supply": "435-436.04 450",
-      "demand": "429.82-429 416",
       "flow": []
     }
   }
