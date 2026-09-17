@@ -1,10 +1,10 @@
 {
-  "date": "2026-09-16",
-  "generatedAt": "2026-09-16T10:48:03.999Z",
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T09:53:18.763Z",
   "tickers": {
     "/ES": {
       "emoji": "📊",
-      "commentary": "yesterday morning rejected the mean and came back to demand, this morning holding the 20sma/ema this  morning break and hold pivot we go to 7705 and then we see ",
+      "commentary": "had a drop and recovered everything with the FOMC , i longed MES yesterday right when market opened at 6 pm est, this morning lets see pivot holds for upside cant hold we go back to demand ",
       "conviction": 3,
       "pivot": "7680",
       "supply": "7705 7724-7739 7766 ",
@@ -13,143 +13,93 @@
     },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "holding this demand, holds here we go to 334 supply zone, cant hold this demand we go to 327 then 322 ish ",
+      "commentary": "has a tight squeeze, breaks the supply zone we going to 344. ",
       "conviction": 0,
       "pivot": "",
       "supply": "334.37-334.99 336.22",
       "demand": "330.81-329.59 327.30 322.37",
-      "flow": [
-        "🐋 $10.6M CALL flow yesterday · $330C exp 9/16",
-        "🎯 38 unusual flows yesterday",
-        "📈 79% bullish premium flow"
-      ]
+      "flow": []
     },
     "AMD": {
       "emoji": "🧠",
-      "commentary": "we got a nice move yesterday in the morning and pulled back to demand all day and this morning holding above the gap, we break and hold pivot we going to supply zone ",
-      "conviction": 0,
+      "commentary": "holding above the pivot breaks supply zone we go to 546",
+      "conviction": 1,
       "pivot": "514.67",
-      "supply": "526.79-530.13",
+      "supply": "526.79-530.13 546.44",
       "demand": "502-495",
-      "flow": [
-        "🐋 $4.0M PUT flow yesterday · $390P exp 9/17",
-        "⚡ 1 golden sweep yesterday",
-        "🎯 36 unusual flows yesterday"
-      ]
+      "flow": []
     },
-    "COIN": {
-      "emoji": "🪙",
-      "commentary": "back at demand holds this we go to supply zone like this demand for short/long term we hold here ",
+    "AMZN": {
+      "emoji": "📦",
+      "commentary": "coming to supply zone, breaks supply zone we go to 251.93 then 255. supply zone, ",
       "conviction": 0,
-      "pivot": "",
-      "supply": "174.44-175.55",
-      "demand": "171.41-167.92",
-      "flow": [
-        "🐋 $2.1M PUT flow yesterday · $160P exp 9/18",
-        "🎯 132 unusual flows yesterday"
-      ]
+      "pivot": "247.24",
+      "supply": "249-250.43 251.93 255.19",
+      "demand": "245.78-242.52",
+      "flow": []
+    },
+    "CRWV": {
+      "emoji": "🤖",
+      "commentary": "tried to buy some options for next week, got stopped out with FOMC and this morning gapping up, breaks supply zone we going to squeeze ",
+      "conviction": 3,
+      "pivot": "88.62",
+      "supply": "89.63-91.81 94.26",
+      "demand": "83.17 79.03",
+      "flow": []
     },
     "GOOGL": {
       "emoji": "🔎",
-      "commentary": "holding demand this morning, holds the demand we go to pivot cant hold this demand we go to 338.57",
+      "commentary": "mentioned she came to key demand yesterday and held, this morning gapping up. breaks and holds pivot we going to 349 then 351 ish ",
       "conviction": 0,
       "pivot": "347.25",
       "supply": "349 351.60",
       "demand": "342-344.68 338.57",
-      "flow": [
-        "🐋 $3.9M CALL flow yesterday · $345C exp 9/18",
-        "⚡ 1 golden sweep yesterday",
-        "🎯 28 unusual flows yesterday",
-        "📈 66% bullish premium flow"
-      ]
+      "flow": []
     },
     "META": {
       "emoji": "📱",
-      "commentary": "has been 1 of the strong names lately, this morning want to see hold pivot, holds this we going to supply zone , ",
+      "commentary": "has been strong , holding like a champ watching this supply zone break and hold ",
       "conviction": 3,
       "pivot": "664.24",
       "supply": "686-691",
       "demand": "638.53-624.80 619.42-609.74",
-      "flow": [
-        "🐋 $11.9M CALL flow yesterday · $700C exp 9/18",
-        "⚡ 1 golden sweep yesterday",
-        "🎯 90 unusual flows yesterday"
-      ]
-    },
-    "MU": {
-      "emoji": "💾",
-      "commentary": "is back at key demand, holds this demand i like a trade here , has to hold 935 ",
-      "conviction": 0,
-      "pivot": "",
-      "supply": "968",
-      "demand": "935-915",
-      "flow": [
-        "🐋 $32.3M CALL flow yesterday · $930C exp 9/16",
-        "⚡ 4 golden sweeps yesterday",
-        "🎯 68 unusual flows yesterday"
-      ]
+      "flow": []
     },
     "NVDA": {
       "emoji": "🖥️",
-      "commentary": "inside a tight squeeze, holds pivot we go to supply zone break and hold this can get momentum , cant hold pivot we go to 208 and then we see, ",
+      "commentary": "trading around the mean, breaks this supply zone, we can squeeze it out to 221.60 ",
       "conviction": 0,
       "pivot": "212.90",
-      "supply": "214.80-218.18 ",
+      "supply": "214.80-218.18 221.60",
       "demand": "208.78 204.33-202.75",
-      "flow": [
-        "🐋 $5.1M PUT flow yesterday · $210P exp 9/16",
-        "⚡ 1 golden sweep yesterday",
-        "🎯 548 unusual flows yesterday",
-        "📈 67% bullish premium flow"
-      ]
-    },
-    "PLTR": {
-      "emoji": "🔭",
-      "commentary": "has been holding this demand nicely above the mean, holds this demand like longs, with yesterdays hod target then 180 supply zone ",
-      "conviction": 2,
-      "pivot": "",
-      "supply": "180.18-182.44",
-      "demand": "169.42-172.41",
-      "flow": [
-        "🐋 $2.7M CALL flow yesterday · $180C exp 9/18",
-        "🎯 39 unusual flows yesterday",
-        "📈 84% bullish premium flow"
-      ]
+      "flow": []
     },
     "TSLA": {
       "emoji": "⚡",
-      "commentary": "inside a tight squeeze, holds this demand we go to pivot break and hold we go to supply zone, cant hold the demand we dump to 342",
+      "commentary": "holding well. we bought some call for next week, this morning lets see we break this supply zone in the morning ",
       "conviction": 3,
       "pivot": "358.80",
-      "supply": "363.24-364.02",
+      "supply": "363.24-364.02 368.60 372.90-377.22",
       "demand": "355.75-351.26 342.11",
-      "flow": [
-        "🐋 $10.0M PUT flow yesterday · $355P exp 9/16",
-        "🎯 137 unusual flows yesterday"
-      ]
+      "flow": []
+    },
+    "VIX": {
+      "emoji": "📊",
+      "commentary": "yesterday came to the 18.67 and rejected, and right now we at 16 , gives up 16 and goes lower market will go up, bounces and goes to 18.67 market will pull back",
+      "conviction": 0,
+      "pivot": "16",
+      "supply": "",
+      "demand": "18.67",
+      "flow": []
     },
     "INTC": {
       "emoji": "🔥",
-      "commentary": "gapping up a lil bit this morning holds the pivot we go to 102 then supply zone, cant hold pivot we go to 97.90 and then we see",
-      "conviction": 0,
-      "pivot": "100.45",
-      "supply": "102.88 105.97-107.57",
-      "demand": "97.90 95.94",
-      "flow": [
-        "🐋 $6.2M PUT flow yesterday · $98P exp 9/16",
-        "🎯 79 unusual flows yesterday"
-      ]
-    },
-    "LITE": {
-      "emoji": "🔥",
-      "commentary": "at demand zone, holds this demand i like short term trade here ",
-      "conviction": 0,
-      "pivot": "",
-      "supply": "890 923",
-      "demand": "854-854",
-      "flow": [
-        "🐋 $2.5M CALL flow yesterday · $900C exp 9/18"
-      ]
+      "commentary": "is looking nice, breaks pivot we going to supply zone ",
+      "conviction": 3,
+      "pivot": "102.88",
+      "supply": "105.97-107.57",
+      "demand": "100.45",
+      "flow": []
     }
   }
 }
