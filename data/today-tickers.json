@@ -1,95 +1,104 @@
 {
-  "date": "2026-09-21",
-  "generatedAt": "2026-09-21T10:58:33.572Z",
+  "date": "2026-09-22",
+  "generatedAt": "2026-09-22T10:42:04.781Z",
   "tickers": {
     "/ES": {
       "emoji": "📊",
-      "commentary": "breaking a squeeze this morning breaks and holds pivot we go to next supply level, rejects and comes back to 7739 demand could be a long entry ",
+      "commentary": "what a move yesterday, broke the squeeze, can we continue today and make new highs and hold",
       "conviction": 0,
-      "pivot": "7766.50",
-      "supply": "7782.50 7820-7838.50",
-      "demand": "7739-7724 7705",
+      "pivot": "7824-7820",
+      "supply": "7838-7857",
+      "demand": "7782 7766",
       "flow": []
     },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "inside a tight squeeze, opening flat, holds this demand and breaks and holds pivot we going to supply zone ",
+      "commentary": "breaks this pivot and holds we going to 344.57 ATH and then we see , has a nice squeeze, breaks an holds this can go maybe 350 ",
       "conviction": 0,
-      "pivot": "336.22",
-      "supply": "338.55-339.57 344.57",
-      "demand": "334.99-334.37 330.81-329.59",
+      "pivot": "338.55-339.57",
+      "supply": "344.57 ",
+      "demand": "336.22 334.99-334.37",
       "flow": []
     },
     "AMD": {
       "emoji": "🧠",
-      "commentary": "gapping up this morning,  coming into supply zone, breaks this means we making new ATH comes back to 561.47 pivot and holds could be a long entry ",
+      "commentary": "what a nice move last few days on her, above demand this is very bullish, comes back to demand and holds its a long entry ",
       "conviction": 0,
-      "pivot": "561.47",
-      "supply": "574.20-584.73",
-      "demand": "546.44 530-526.79",
+      "pivot": "615.99",
+      "supply": "625.46 ",
+      "demand": "584-574.20",
       "flow": []
     },
     "AMZN": {
       "emoji": "📦",
-      "commentary": "trading at liquidity, holds pivot we go to supply zone and we break that we going to 262.07",
+      "commentary": "holds above the 258 zone its bullish, holds pivot this morning we going to 262 holds that 266-267 comes to play ",
       "conviction": 0,
-      "pivot": "255.19",
-      "supply": "257.04-258 262.07",
-      "demand": "251.93 250.43-249.51",
+      "pivot": "259.49",
+      "supply": "262.07 266.63-267.56",
+      "demand": "258-257.04 255.19",
       "flow": []
     },
     "AVGO": {
       "emoji": "⚡",
-      "commentary": "nice bounce and reclaimed on avgo after its earnings drop, this morning pivot breaks and holds we going to supply zone, rejects pivot we go back to demand zone ",
+      "commentary": "held demand and got bought up, this morning pivot holds we go to supply zone, cant hold pivot we go to demand, holds demand its a long entry ",
       "conviction": 0,
       "pivot": "363.28",
       "supply": "374.61-376.59",
       "demand": "357.61-350.06",
       "flow": []
     },
+    "COIN": {
+      "emoji": "🪙",
+      "commentary": "nice breakout on her and came to supply and pulled back to demand this morning, holds pivot we go back to supply zone ",
+      "conviction": 0,
+      "pivot": "196.21",
+      "supply": "204.49-207.13 213.60-216.05",
+      "demand": "194.01-190.96",
+      "flow": []
+    },
     "GOOGL": {
       "emoji": "🔎",
-      "commentary": "inside a daily squeeze, holding well holds pivot we go to supply zone and see we break out cant hold pivot we go to 349 and see there ",
+      "commentary": "holding well, came to the 100sma and rejected yesterday, breaks this supply zone we going to 346.21",
       "conviction": 3,
-      "pivot": "351.60",
-      "supply": "357.61-359.68",
-      "demand": "349 347.25 344.68-342.98",
+      "pivot": "",
+      "supply": "357.61-359.68 364.21",
+      "demand": "351.60 349",
+      "flow": []
+    },
+    "HOOD": {
+      "emoji": "🏹",
+      "commentary": "came to demand this morning and holding, holds this we going to supply zone  ",
+      "conviction": 3,
+      "pivot": "",
+      "supply": "124.55-125.25 130.07",
+      "demand": "120.08-119.50 116.60",
       "flow": []
     },
     "META": {
       "emoji": "📱",
-      "commentary": "came to my supply zone at 690 ish , this morning we trading below the supply zone breaks and holds this takes meta to 721.30 , comes back to 664 is a  buy entry ",
+      "commentary": "what a move yesterday on this, holds pivot we go to supply zone, cant hold pivot we go to 721 then 711",
       "conviction": 3,
-      "pivot": "",
-      "supply": "686-691.51",
-      "demand": "664.24 638.56 624.81",
-      "flow": []
-    },
-    "NVDA": {
-      "emoji": "🖥️",
-      "commentary": "held demand nicely last week , holds pivot we go to supply zone, cant hold pivot we go to 221.60 then demand zone ",
-      "conviction": 0,
-      "pivot": "224.76",
-      "supply": "227.49-230.47",
-      "demand": "221.60 218.18-214.80",
+      "pivot": "740.91",
+      "supply": " 785.73-796.25",
+      "demand": "721.30 711 691.52-686",
       "flow": []
     },
     "PLTR": {
       "emoji": "🔭",
-      "commentary": "inside a tight squeeze , holds pivot we go to supply zone and see we breakout , cant hold pivot we go to demand zone ",
+      "commentary": "nice move yesterday, we were in from friday, took profits last morning and then ripped, holds pivot and demand we go to supply zone ",
       "conviction": 3,
-      "pivot": "177.88",
-      "supply": "180.18-182.44",
-      "demand": "172.41-169.42",
+      "pivot": "183.38",
+      "supply": "187.28-190",
+      "demand": "182.44-180.18",
       "flow": []
     },
     "TSLA": {
       "emoji": "⚡",
-      "commentary": "holding well, holds pivot we go to supply zone, cant hold pivot we go to demand zone ",
+      "commentary": "holding nicely this morning, holds pivot we going to supply zone, clear the 200sma and 100sma we can got o 384 ish ",
       "conviction": 3,
-      "pivot": "368.60",
-      "supply": "372.90-377.22",
-      "demand": "364.02-363.24",
+      "pivot": "377.22",
+      "supply": "384.01-389.30",
+      "demand": "374.12-372.90",
       "flow": []
     }
   }
