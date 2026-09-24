@@ -1,95 +1,86 @@
 {
-  "date": "2026-09-23",
-  "generatedAt": "2026-09-23T11:06:36.638Z",
+  "date": "2026-09-24",
+  "generatedAt": "2026-09-24T11:19:17.524Z",
   "tickers": {
     "/ES": {
       "emoji": "📊",
-      "commentary": " side ways yesterday and flagging with a tight hourly and 2hour squeezes, holding between pivot and supply zone, breaks either direction will make a nice move  ",
-      "conviction": 3,
-      "pivot": "7824-7820",
-      "supply": "7838-7857",
-      "demand": "7782 7766",
+      "commentary": "pulling back to the mean holds this pivot we go back to 7766 and then we see, cant hold pivot we go to 7705 cant hold that then 7680 comes to play ",
+      "conviction": 0,
+      "pivot": "7724-7739",
+      "supply": "7766 7782",
+      "demand": "7705 7680",
       "flow": []
     },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "made a ATH and pulled back to demand, holds pivot we go back to ATH and see if this time it can hold ",
+      "commentary": "pulled back yesterday and this morning watch pivot holds pivot we go to supply zone break and hold that then 344.57 comes to play ",
       "conviction": 0,
-      "pivot": "338.55-339.57",
-      "supply": "344.57 ",
-      "demand": "336.22 334.99-334.37",
+      "pivot": "336.22",
+      "supply": "338.55-339.57 344.57",
+      "demand": "334.99-334.37 330.81-329.59",
       "flow": []
     },
     "AMD": {
       "emoji": "🧠",
-      "commentary": "holding its gains like a champion, holds pivot we push to yesterdays hod and then we see if we stay above it, cant hold pivot we can go to yesterday's lows cant hold it then we go to demand zone ",
+      "commentary": "has been the new Sheriff in town, this morning cant hold pivot we go to demand zone, ",
       "conviction": 0,
-      "pivot": "615.99",
-      "supply": "624.52 ",
-      "demand": "574-584.73",
+      "pivot": "606.31",
+      "supply": "615.99 624.52",
+      "demand": "584.73-574.20",
       "flow": []
     },
     "AMZN": {
       "emoji": "📦",
-      "commentary": "holds the pivot means we holding all the emas, like this for short term swing if this pivot holds and breaks the supply zone ",
-      "conviction": 3,
-      "pivot": "255.19",
-      "supply": "257.04-258",
-      "demand": "251.93",
-      "flow": []
-    },
-    "AVGO": {
-      "emoji": "⚡",
-      "commentary": "inside a squeeze, holds pivot we have  go to yesterdays hod, holds thats we going to supply zone ",
+      "commentary": "gave up big demand yesterday this morning cant hold pivot we go to next demand zone, holds pivot we go to supply zone ",
       "conviction": 0,
-      "pivot": "363.28",
-      "supply": "374.61-376.59",
-      "demand": "357.61-350.06",
+      "pivot": "247.24",
+      "supply": "249.51-250.43",
+      "demand": "245.78-242.52",
       "flow": []
     },
     "COIN": {
       "emoji": "🪙",
-      "commentary": "trading between  big supply and demand, holds pivot this morning lets see we push to supply zone and break, cant hold pivot we going to demand zone ",
+      "commentary": "inside a tight squeeze, holds pivot i like longs on her, ",
       "conviction": 0,
       "pivot": "196.21",
       "supply": "204.49-207.13 213.60-216.05",
       "demand": "194.01-190.96",
       "flow": []
     },
-    "GOOGL": {
-      "emoji": "🔎",
-      "commentary": "nice move in the morning and gave back , holds pivot this morning we go back to supply zone, cant hold pivot we going to demand zone ",
-      "conviction": 0,
-      "pivot": "351.60",
-      "supply": "357.61-359.68 364.21",
-      "demand": "349 347.25 344.68-342.98",
+    "HOOD": {
+      "emoji": "🏹",
+      "commentary": "at demand here in premarket, holds this demand could be a nice long, cant hold this we going to flush and release the energy downside ",
+      "conviction": 3,
+      "pivot": "",
+      "supply": "124.55-125.25 130.07",
+      "demand": "120.08-119.50 116.60",
       "flow": []
     },
-    "MU": {
-      "emoji": "💾",
-      "commentary": "breaking the daily squeeze, this morning beaks and holds pivot we have a gap to fill from 1097-1124.66 , lets see we fill gap this morning ",
-      "conviction": 2,
-      "pivot": "1089.29",
-      "supply": "1097-1124.66",
-      "demand": "1042-1036",
-      "flow": []
-    },
-    "NVDA": {
-      "emoji": "🖥️",
-      "commentary": "holding well, holds pivot we go to supply zone, break and hold that we going to 232 and then we see  ",
-      "conviction": 0,
-      "pivot": "227.49",
-      "supply": "230-230.47.47 232.28",
-      "demand": "221.60 218.18-214.80",
+    "META": {
+      "emoji": "📱",
+      "commentary": "in a tight squeeze, cant hold pivot we going to 711 cant hold that then 691 demand comes to play, holds pivot we go back to 740 ish ",
+      "conviction": 3,
+      "pivot": "721.30",
+      "supply": "740.91 759.16",
+      "demand": "711 691.52-686",
       "flow": []
     },
     "TSLA": {
       "emoji": "⚡",
-      "commentary": "trading around the 200ema and 100sma, breaks this and holds pivot we going to supply zone, this can squeeze out if breaks out ",
+      "commentary": "tried to breakout yesterday, came to supply and rejected and this morning watch pivot cant hold we going to 374 demand zone,  holds pivot we go back to supply zone ",
       "conviction": 3,
       "pivot": "377.22",
       "supply": "384.01-389.30",
-      "demand": "374.12-372.90",
+      "demand": "374.12-372.90 368.60",
+      "flow": []
+    },
+    "VIX": {
+      "emoji": "📊",
+      "commentary": "above 16 that means market can pull back, holds above 16 watch downside on the market, if 16 gives up market can push back upside ",
+      "conviction": 0,
+      "pivot": "16",
+      "supply": "18.67",
+      "demand": "",
       "flow": []
     }
   }
