@@ -1,113 +1,14 @@
 {
   "date": "2026-10-02",
-  "generatedAt": "2026-10-02T10:11:20.292Z",
+  "generatedAt": "2026-10-02T13:25:25.781Z",
   "tickers": {
-    "/ES": {
-      "emoji": "📊",
-      "commentary": "nice move from 7680 yesterday , got todays SPX locked most have 2 runners, lets see howmuch these runners will be this morning ",
-      "conviction": 0,
-      "pivot": "7766.50",
-      "supply": "7782.50 7801 7820-7824",
-      "demand": "7739-7724 7705",
-      "flow": []
-    },
-    "AAPL": {
-      "emoji": "🍏",
-      "commentary": "trading at the mean and holding the pivot, holds this 330 ish i like long on her ",
-      "conviction": 0,
-      "pivot": "329.59-330.81",
-      "supply": "334.37-334.99",
-      "demand": "327.30 322.37",
-      "flow": []
-    },
-    "AMD": {
-      "emoji": "🧠",
-      "commentary": "flagging and inside a tight squeeze  breaks and holds pivot we going to ATH and then we see ",
+    "NVDA": {
+      "emoji": "🖥️",
+      "commentary": "in a tight squeeze breaks  and holds pivot we going to ATH today ",
       "conviction": 3,
-      "pivot": "624.52",
-      "supply": "639",
-      "demand": "615.99 606.31 596.07",
-      "flow": []
-    },
-    "COIN": {
-      "emoji": "🪙",
-      "commentary": "has been in a tight squeeze for few days now, came to the mean and held IF BTC squeeze this will also, will look into buying some 2 weeks out calls today ",
-      "conviction": 3,
-      "pivot": "196.21",
-      "supply": "204.49-207.13",
-      "demand": "194-192 187",
-      "flow": []
-    },
-    "CRWV": {
-      "emoji": "🤖",
-      "commentary": "wants to break this squeeze upside, pivot holds we push upside on this name , like a short term swing on her ",
-      "conviction": 3,
-      "pivot": "88.62-89.63",
-      "supply": "91.81 94.26",
-      "demand": "83.17",
-      "flow": []
-    },
-    "HOOD": {
-      "emoji": "🏹",
-      "commentary": "last time  i longed here at pivot we got a rip to 126 , i like a short term swing if we can hold pivot and reclaim yesterdays hod",
-      "conviction": 3,
-      "pivot": "112.50",
-      "supply": "116.60 119.50-120.88",
-      "demand": "111.02 109.71-108.21",
-      "flow": []
-    },
-    "META": {
-      "emoji": "📱",
-      "commentary": "started doing Meta again, side ways action shes inside a tight squeeze breaks either side can give a good move ",
-      "conviction": 3,
-      "pivot": "721.30",
-      "supply": "740.91 759.16 770.60",
-      "demand": "711 691.52-686",
-      "flow": []
-    },
-    "MU": {
-      "emoji": "💾",
-      "commentary": "has its earnings done, yesterday at demand of 1042 ish i called out 1150c for next week went from 7.25 to 15.00, this morning holds pivot we have a gap to fill upside, keep the runners if you holding ",
-      "conviction": 3,
-      "pivot": "1097 ",
-      "supply": "1087.72-1124.66 1168.68",
-      "demand": "1057",
-      "flow": []
-    },
-    "PLTR": {
-      "emoji": "🔭",
-      "commentary": "stays above this demand we can squeeze it out 194. could have a nice squeeze firing ",
-      "conviction": 3,
-      "pivot": "",
-      "supply": "194.68",
-      "demand": "190-187.28",
-      "flow": []
-    },
-    "TSLA": {
-      "emoji": "⚡",
-      "commentary": "has numbers coming out today, this 352-355 is promising to long here, holds this i like longs ",
-      "conviction": 0,
-      "pivot": "355.75-352.14",
-      "supply": "363-364.02",
-      "demand": "345 342.11",
-      "flow": []
-    },
-    "VIX": {
-      "emoji": "📊",
-      "commentary": "at 16 this morning, gives up 16 market will squeeze up , goes above 16 market can pull back ",
-      "conviction": 0,
-      "pivot": "16",
-      "supply": "18.67",
-      "demand": "",
-      "flow": []
-    },
-    "ARM": {
-      "emoji": "🔥",
-      "commentary": "holding nicely, breaks and holds pivot this can squeeze it out to 307 then 315",
-      "conviction": 3,
-      "pivot": "298.93",
-      "supply": "307.17 315",
-      "demand": "290.21-287.15",
+      "pivot": "233.71",
+      "supply": "234.76 236.54",
+      "demand": "232.28 230.47-230",
       "flow": []
     }
   }
