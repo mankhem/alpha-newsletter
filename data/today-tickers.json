@@ -1,14 +1,95 @@
 {
-  "date": "2026-10-02",
-  "generatedAt": "2026-10-02T13:25:25.781Z",
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05T10:48:46.776Z",
   "tickers": {
+    "/ES": {
+      "emoji": "📊",
+      "commentary": "inside the tight squeeze4 still , this morning reclaims Pivot we go back to 7782 then 7810 and then we see, cant hold pivot we going to 7739 demand zone and then we see ",
+      "conviction": 0,
+      "pivot": "7766.50 ",
+      "supply": "7782.50 7810 7820-7824",
+      "demand": "7739-7724 7705",
+      "flow": []
+    },
+    "AAPL": {
+      "emoji": "🍏",
+      "commentary": "inside Supply & Demand zone holding above the mean, breaks supply zone we go to 336 then 338 supply zone ",
+      "conviction": 0,
+      "pivot": "",
+      "supply": "334.37-334.99 336.22",
+      "demand": "330.81-329.59",
+      "flow": []
+    },
+    "AMD": {
+      "emoji": "🧠",
+      "commentary": "has been a champion to trade, comes to pivot and holds i like long into supply zone and see we breakout and make new ATH, cant hold pivot we go to 615 then 606 ish ",
+      "conviction": 2,
+      "pivot": "624.52",
+      "supply": "639-645.46",
+      "demand": "615.99 606.31 596.07",
+      "flow": []
+    },
+    "AMZN": {
+      "emoji": "📦",
+      "commentary": "at demand zone, holds this 250 demand and reclaims the pivot i like long and see break last weeks highs and holds ",
+      "conviction": 0,
+      "pivot": "251.93",
+      "supply": "253.56 255.19 257-258 ",
+      "demand": "250.43-249.51 247.24 245.78-242.52",
+      "flow": []
+    },
+    "CRWV": {
+      "emoji": "🤖",
+      "commentary": "holding well , holds pivot this morning and pushes to Supply zone and breaks and holds like her upside  for short term swings",
+      "conviction": 3,
+      "pivot": "89.63-88.62",
+      "supply": "91.81-92.80 94.26 ",
+      "demand": "83.53-83.17",
+      "flow": []
+    },
+    "GOOGL": {
+      "emoji": "🔎",
+      "commentary": "trading at the mean, holds pivot this morning we can squeeze to 116 then supply zone ",
+      "conviction": 0,
+      "pivot": "114.93",
+      "supply": "116.60 119.50-120.88",
+      "demand": "112.50 111.02",
+      "flow": []
+    },
+    "META": {
+      "emoji": "📱",
+      "commentary": "in a tight squeeze, when this fires will give a good move, holds above pivot im bullish, cant hold pivot and demand then we going to 691",
+      "conviction": 3,
+      "pivot": "721.30",
+      "supply": "740.91 751 759",
+      "demand": "713-711 691-686",
+      "flow": []
+    },
+    "MSFT": {
+      "emoji": "🖥️",
+      "commentary": "in a tight squeeze, breaks supply zone and holds this can squeeze it out ",
+      "conviction": 1,
+      "pivot": "",
+      "supply": "517.78-519.40 522.85",
+      "demand": "515.39-512.12",
+      "flow": []
+    },
     "NVDA": {
       "emoji": "🖥️",
-      "commentary": "in a tight squeeze breaks  and holds pivot we going to ATH today ",
+      "commentary": "trading right below ATH, holds this demand we can go to supply zone and see we break and make new ATH ",
       "conviction": 3,
-      "pivot": "233.71",
-      "supply": "234.76 236.54",
-      "demand": "232.28 230.47-230",
+      "pivot": "",
+      "supply": "236.54-237.88",
+      "demand": "234.76-233.71",
+      "flow": []
+    },
+    "TSLA": {
+      "emoji": "⚡",
+      "commentary": "came to supply on Friday and rejected, this morning holds pivot we can try to long and see we break supply zone , pivot cant hold we going to demand zone ",
+      "conviction": 0,
+      "pivot": "368.60",
+      "supply": "372.90-374.60 377.22",
+      "demand": "364.02-363.24 355.75-351.26",
       "flow": []
     }
   }
