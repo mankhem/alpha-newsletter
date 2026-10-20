@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-19",
-  "generatedAt": "2026-10-19T10:51:42.526Z",
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T11:12:43.420Z",
   "tickers": {
     "/ES": {
       "emoji": "📊",
-      "commentary": "nice bought up on her and went to supply and rejected, want to see holds pivot and goes back to supply and break and hold",
+      "commentary": "nice hold yesterday and we moved to supply zone, this morning same idea, holds pivot we can play upside ",
       "conviction": 1,
       "pivot": "7729.50",
       "supply": "7760-7766 7809-7820",
@@ -13,92 +13,92 @@
     },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "inside a tight squeeze, holds this pivot/demand we go back to supply zone and then we see, cant hold this demand we going to last week lows ",
+      "commentary": "in a tight squeeze, cant hold pivot we go to next demand zone, ",
       "conviction": 2,
-      "pivot": "342.99",
-      "supply": "344.57-345.34",
-      "demand": "342.99-341.57 337.60",
+      "pivot": "340.07",
+      "supply": "341.57-342.99 344.57-345.34",
+      "demand": "337.60 335.54-334.99",
       "flow": []
     },
     "AMD": {
       "emoji": "🧠",
-      "commentary": "we clear the pivot and hold the 530 demand could be a double bottom then, holds pivot we go to next supply level upside, reject pivot we go back to demand zone ",
+      "commentary": "we at demand here holds this demand we can long it, cant hold this we going to 514.67",
       "conviction": 0,
-      "pivot": "546.44",
+      "pivot": "",
       "supply": "561.47 574.20-584.73",
       "demand": "530-526 514.67",
       "flow": []
     },
     "AMZN": {
       "emoji": "📦",
-      "commentary": "",
+      "commentary": "nice momentum yesterday this morning breaks supply zone this morning we going to 267.56 and then we see, we reject here we go back to 259-258 demand zone ",
       "conviction": 3,
-      "pivot": "253.56",
-      "supply": "258.60-259.49",
-      "demand": "248.60 245.60-244.30",
+      "pivot": "",
+      "supply": "262.80-263.69 267.56",
+      "demand": "259.49-258.60",
       "flow": []
     },
     "COIN": {
       "emoji": "🪙",
-      "commentary": "been stuck in a range, came to the demand and held this morning holds this 175 zone/pivot i like longs into supply zone and see if we can breakout ",
+      "commentary": "cant hold pivot this morning we go to 160 demand zone , holds this pivot we go back to supply zone ",
       "conviction": 2,
-      "pivot": "175.55-174.44",
-      "supply": "179.30-180.81",
-      "demand": "171.41-167.92",
-      "flow": []
-    },
-    "CRWD": {
-      "emoji": "🛡️",
-      "commentary": "came to previous supply zone and above it this morning, holds this and reclaims pivot i like short term swing on her ",
-      "conviction": 3,
-      "pivot": "233.88",
-      "supply": "243.95 250.32",
-      "demand": "229.08-227.50 224.60",
+      "pivot": "165.49",
+      "supply": "167.92-171.41 174.44-175.55",
+      "demand": "160.54-158.40",
       "flow": []
     },
     "GOOGL": {
       "emoji": "🔎",
-      "commentary": "at supply zone  breaks this supply zone and holds we can get a move to 347.25 then 349",
+      "commentary": "holds this pivot this morning we go to 347 then 349. cant hold the 342.98 we go back to demand zone ",
       "conviction": 3,
-      "pivot": "",
-      "supply": "342.98-344.68 347.25 349",
+      "pivot": "342.98-344.68 ",
+      "supply": "347.25 349",
       "demand": "339.08-338.57",
       "flow": []
     },
     "META": {
       "emoji": "📱",
-      "commentary": "back at the mean, holds this demand and reclaims pivot i like long on her, cant hold 711 we going to 702.71 then 691 demand zone ",
+      "commentary": "gave up key pivot , stay below this pivot we going to yesterdays low cant hold that then we going to the 691 demand zone, holds there and bounces its your long entry, but we have Earnings this week ",
       "conviction": 3,
-      "pivot": "721.30",
-      "supply": "740.91 474.60-751",
-      "demand": "713.83-711 702.71 691-686",
+      "pivot": "702.71",
+      "supply": "711-713.83",
+      "demand": "691.52-686.08",
       "flow": []
     },
-    "MU": {
-      "emoji": "💾",
-      "commentary": "has been extended to the downside i think holds pivot we go to supply zone, clear supply zone this can go to 968 ",
+    "NVDA": {
+      "emoji": "🖥️",
+      "commentary": "at key demand holds this demand i like longs for few weeks out here, ",
       "conviction": 3,
-      "pivot": "887.61",
-      "supply": "915.18-935 968",
-      "demand": "858.90-844.19 818.67-804",
+      "pivot": "",
+      "supply": "221.60 224.76",
+      "demand": "214.80-218.18 212.19",
       "flow": []
     },
-    "PLTR": {
-      "emoji": "🔭",
-      "commentary": "at demand zone this morning, cant hold we going to 184.45 holds pivot and bounces we go back to 190 supply zone and see we break and hold, cant hold pivot we go to 182-180 demand zone ",
-      "conviction": 3,
-      "pivot": "184.45",
-      "supply": "187.28-190 194.68",
-      "demand": "182.44-180.18",
+    "SMH": {
+      "emoji": "💻",
+      "commentary": "at key demand here, holds here see the semis name that can bounce, can hold we going lower, i dont trade her, but i watch the direction so i know whats happening with the semis ",
+      "conviction": 0,
+      "pivot": "540.07",
+      "supply": "556",
+      "demand": " 536 532",
       "flow": []
     },
     "TSLA": {
       "emoji": "⚡",
-      "commentary": "back at demand of 355 ish, holds here we go  to 364 supply zone, cant hold this demand and fridays lows we going to 345.88",
+      "commentary": "nice hold and bounce yesterday from the 355 zone, this morning cant hold pivot we come back to 364 demand, holds there we can long, ",
       "conviction": 2,
-      "pivot": "",
-      "supply": "363-364",
-      "demand": "351-355  349 345.88",
+      "pivot": "368.60",
+      "supply": "372.90-374.60 377.22",
+      "demand": "364.02-363.24 355.75",
+      "flow": []
+    },
+    "VIX": {
+      "emoji": "📊",
+      "commentary": "at 18.67 we give up this zone market can get bounce, we hold and going up market can pull back",
+      "conviction": 0,
+      "pivot": "18.67",
+      "supply": "23.33",
+      "demand": "16",
       "flow": []
     }
   }
