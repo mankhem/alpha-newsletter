@@ -1,7 +1,16 @@
 {
   "date": "2026-10-28",
-  "generatedAt": "2026-10-28T11:52:43.971Z",
+  "generatedAt": "2026-10-28T13:03:27.136Z",
   "tickers": {
+    "/ES": {
+      "emoji": "📊",
+      "commentary": "trying to break this 4hour squeeze, holds this pivot we can squeeze out we have FOMC this afternoon",
+      "conviction": 0,
+      "pivot": "7760-7766",
+      "supply": "7782 7809-7820 7838-7848",
+      "demand": "7729 7716-7707 7676-7672",
+      "flow": []
+    },
     "AAPL": {
       "emoji": "🍏",
       "commentary": "nice held yesterday and moved up now we want to see this 344-345 pivot holds , holds this we go upside and think new ATH can come ",
