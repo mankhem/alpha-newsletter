@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-28",
-  "generatedAt": "2026-10-28T13:03:27.136Z",
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T13:05:44.583Z",
   "tickers": {
     "/ES": {
       "emoji": "📊",
-      "commentary": "trying to break this 4hour squeeze, holds this pivot we can squeeze out we have FOMC this afternoon",
+      "commentary": "stuck in a range need to hold pivot for upside to squeeze it out, cant reclaim the pivot and cant hold 7729 we can flush this squeeze downside ",
       "conviction": 0,
       "pivot": "7760-7766",
       "supply": "7782 7809-7820 7838-7848",
@@ -13,134 +13,66 @@
     },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "nice held yesterday and moved up now we want to see this 344-345 pivot holds , holds this we go upside and think new ATH can come ",
+      "commentary": "breaks the pivot and holds we can go to 351.73 this squeeze can breakout ",
       "conviction": 0,
-      "pivot": "344.57-345.34",
-      "supply": "348.15 351.73",
-      "demand": "342.99-341.57 340.07 338.70-337.60",
-      "flow": [
-        "🐋 $9.1M CALL flow yesterday · $380C exp 1/15",
-        "⚡ 1 golden sweep yesterday",
-        "🎯 21 unusual flows yesterday",
-        "📈 83% bullish premium flow"
-      ]
+      "pivot": "348.15",
+      "supply": "351.73",
+      "demand": "345.-344.57 342.99-341.57 340.07",
+      "flow": []
     },
     "AMD": {
       "emoji": "🧠",
-      "commentary": "nice move on AMD we bought 575c on monday and riding this , want to see if we can break this supply zone upside breaks and holds we going to 596.07",
+      "commentary": "back at demand this morning holds this demand we can long it, cant hold we go to 546.44",
       "conviction": 0,
       "pivot": "",
       "supply": "574.20-584.73 596.07",
       "demand": "561.47-556.79 546.44",
-      "flow": [
-        "🐋 $3.5M CALL flow yesterday · $600C exp 10/30",
-        "⚡ 2 golden sweeps yesterday",
-        "🎯 71 unusual flows yesterday",
-        "📈 68% bullish premium flow"
-      ]
+      "flow": []
     },
-    "AMZN": {
-      "emoji": "📦",
-      "commentary": "at liquidity here holds this pivot we squeeze i up cant hold this pivot we go back to 250",
-      "conviction": 0,
-      "pivot": "253.56",
-      "supply": "258.60-259.49",
-      "demand": "250.18 248.60",
-      "flow": [
-        "🐋 $9.1M CALL flow yesterday · $255C exp 10/28",
-        "🎯 140 unusual flows yesterday",
-        "📈 84% bullish premium flow"
-      ]
+    "GOOGL": {
+      "emoji": "🔎",
+      "commentary": "massive dump on her with earnings, not intrested to long this name for now comes to 272.11 and bounces will look for longing her, for now just trade her cant hold pivot we go lower ",
+      "conviction": 3,
+      "pivot": "287.57",
+      "supply": "296.12",
+      "demand": "283.57 278.20 272.11",
+      "flow": []
     },
     "GS": {
       "emoji": "🏦",
-      "commentary": "liking this name for short/long term, can break and hold this 917-919 supply zone we can can get a squeeze upside ",
+      "commentary": "nice ripper on this name, we got next week options , will take some off in the morning gap up on her holds pivot we go to 955-961 supply zone ",
       "conviction": 0,
-      "pivot": "",
-      "supply": "917-919 936 955-961",
-      "demand": "905.94",
-      "flow": [
-        "🌊 $129K CALL flow yesterday · $1050C exp 11/20",
-        "🎯 3 unusual flows yesterday",
-        "📈 84% bullish premium flow"
-      ]
+      "pivot": "936.30",
+      "supply": "955.38-361.69",
+      "demand": "919-917",
+      "flow": []
     },
-    "HOOD": {
-      "emoji": "🏹",
-      "commentary": "earnings out and Dumpaclon , this morning shes between Supply & Demand holds this 83-85 demand can be long, this 85 was a big zone before can it hold as support if we come there ",
-      "conviction": 3,
-      "pivot": "",
-      "supply": "88.21-89.50",
-      "demand": "83.68-85",
-      "flow": [
-        "🐋 $2.0M CALL flow yesterday · $111C exp 10/30",
-        "🎯 141 unusual flows yesterday",
-        "📈 71% bullish premium flow"
-      ]
-    },
-    "META": {
-      "emoji": "📱",
-      "commentary": "at key demand here holds can be long if we can reclaim the pivot , cant hold this demand we go lower to 592, Been in a tight range to give a big move ",
-      "conviction": 3,
-      "pivot": "624.80",
-      "supply": "633.27 638.56",
-      "demand": "619.42-609.74 592.60",
-      "flow": [
-        "🐋 $26.6M PUT flow yesterday · $610P exp 10/28",
-        "⚡ 3 golden sweeps yesterday",
-        "🎯 44 unusual flows yesterday"
-      ]
-    },
-    "MU": {
-      "emoji": "💾",
-      "commentary": "what a nice move on MU , this week i kept saying its looking very good and boom what a move we got on her, this morning we break and hold pivot we go more upside, cant hold pivot we can go back to demand zone ",
-      "conviction": 1,
-      "pivot": "968.71",
-      "supply": "1001 1011-1022",
-      "demand": "935-915",
-      "flow": [
-        "🐋 $5.4M PUT flow yesterday · $920P exp 10/28",
-        "⚡ 3 golden sweeps yesterday",
-        "🎯 73 unusual flows yesterday"
-      ]
-    },
-    "NVDA": {
-      "emoji": "🖥️",
-      "commentary": "nice hold on this demand keeps holding we go to 221.10 and see we can reclaim it and go higher, ",
-      "conviction": 3,
-      "pivot": "",
-      "supply": "222.10 224.76",
-      "demand": "214.80-218.18 221.18",
-      "flow": [
-        "🐋 $4.1M CALL flow yesterday · $220C exp 10/28",
-        "🎯 255 unusual flows yesterday"
-      ]
+    "MSTR": {
+      "emoji": "🏦",
+      "commentary": "nice move on her with earnings can reclaim the pivot she goes to 551. and then we see , if comes to demand and holds and bounces its your long entry ",
+      "conviction": 0,
+      "pivot": "543.82",
+      "supply": "551.15 553",
+      "demand": "537.22-535.57 531",
+      "flow": []
     },
     "PLTR": {
       "emoji": "🔭",
-      "commentary": "inside a tight squeeze, bought some options yesterday and swinging some positions on it,  breaks pivot this can squeeze out ",
+      "commentary": "inside a tight squeeze, holds above pivot we can squeee it out to the top",
       "conviction": 3,
       "pivot": "198.88",
       "supply": "203.55 207.52-209.58",
       "demand": "194.68",
-      "flow": [
-        "🐋 $1.7M CALL flow yesterday · $200C exp 10/30",
-        "🎯 28 unusual flows yesterday"
-      ]
+      "flow": []
     },
     "TSLA": {
       "emoji": "⚡",
-      "commentary": "nice move on her this week this morning want to see hold 406.59 holds we go to 414.50-420 supply zone ",
+      "commentary": "rest pull back day yesterday on her,  this morning can clear the Pivot we go upside, reject pivot and cant hold vwap we go back to yesterdays lows and then we see there ",
       "conviction": 2,
       "pivot": "406.59",
       "supply": "414.50 420 432",
       "demand": "394.98 389.30",
-      "flow": [
-        "🐋 $11.5M CALL flow yesterday · $405C exp 10/28",
-        "⚡ 4 golden sweeps yesterday",
-        "🎯 95 unusual flows yesterday",
-        "📈 78% bullish premium flow"
-      ]
+      "flow": []
     }
   }
 }
