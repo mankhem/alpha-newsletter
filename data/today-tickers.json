@@ -1,113 +1,14 @@
 {
   "date": "2026-11-09",
-  "generatedAt": "2026-11-09T12:32:20.008Z",
+  "generatedAt": "2026-11-09T13:14:39.790Z",
   "tickers": {
-    "/ES": {
+    "VIX": {
       "emoji": "📊",
-      "commentary": "holds pivot today we push to 7473-7491 supply zone, we hold that bulls could turn it around then, ",
-      "conviction": 1,
-      "pivot": "7411.75",
-      "supply": "7473-7491 7524",
-      "demand": "7331-7322 7300",
-      "flow": []
-    },
-    "AAPL": {
-      "emoji": "🍏",
-      "commentary": "has been a champ. breaks and holds pivot we go to 348 and then we see if we go to 351",
+      "commentary": "you know what happens with vix above 16 and 18.67 , we get massive bombaclat moves in market downside, lets see today if 23.33 gives up and goes back to 18.67 or we go back to 27.43 holds 23.33 wont be a good sign for the market ",
       "conviction": 0,
-      "pivot": "344.57-345.34",
-      "supply": "348.15 351.43-351.3",
-      "demand": " 342.99-341.57  38.70-337.60",
-      "flow": []
-    },
-    "AMD": {
-      "emoji": "🧠",
-      "commentary": "want to see hold pivot and 463 zone, holds this we push to 478.83, cant hold pivot we go back to 440-437 demand zone, cant hold we go to 424.03 ish",
-      "conviction": 3,
-      "pivot": "451 ",
-      "supply": "455-463 478 495-505",
-      "demand": "440-437 424.03 402.10",
-      "flow": []
-    },
-    "AMZN": {
-      "emoji": "📦",
-      "commentary": "has been holding very nice, breaks this supply zone we going to 267.56 then 274.75",
-      "conviction": 3,
-      "pivot": "",
-      "supply": "262-263.69 267.56 274.75",
-      "demand": "258.60-259.49",
-      "flow": []
-    },
-    "GOOGL": {
-      "emoji": "🔎",
-      "commentary": "holds pivot and yesterdays hod this can squeeze out to 296 and breaks will be fun",
-      "conviction": 0,
-      "pivot": "287.57",
-      "supply": "296.49 305.63-311.06",
-      "demand": "283.57 278.20-276.92",
-      "flow": []
-    },
-    "META": {
-      "emoji": "📱",
-      "commentary": "held this pivot nicely in premarket, can break and hold the 624 we go to 633. liking this bottom on this name if 609 can hold ",
-      "conviction": 0,
-      "pivot": "609.74",
-      "supply": "619.42-624.48 633 638",
-      "demand": "592",
-      "flow": []
-    },
-    "MSFT": {
-      "emoji": "🖥️",
-      "commentary": "liking how shes been holding breaks and holds pivot we ho higher to 551 supply zone, is today the MSFT day, lets see we break this squeezes ",
-      "conviction": 3,
-      "pivot": "541.29",
-      "supply": "551.15-555.45",
-      "demand": "537.28-535.35",
-      "flow": []
-    },
-    "NVDA": {
-      "emoji": "🖥️",
-      "commentary": "giving up hard in premarket with Jensen  news, about China Spy, cant reclaim the pivot we go to 171-169.55 demand zone and see if we can hold and bounce there",
-      "conviction": 0,
-      "pivot": "178.23",
-      "supply": "181.46 185.74",
-      "demand": "171.03-169.55 164.27",
-      "flow": []
-    },
-    "PLTR": {
-      "emoji": "🔭",
-      "commentary": "holding ok at the 200sma/ema. holds pivot we got o supply and see we break and go higher, cant hold pivot we go back to demand zone ",
-      "conviction": 0,
-      "pivot": "157.78",
-      "supply": "163.70-165.75",
-      "demand": "152.68-149.64",
-      "flow": []
-    },
-    "TSLA": {
-      "emoji": "⚡",
-      "commentary": "held nicely last week Friday, this morning breaks this pivot of 364 we can go to 372 quick watch this break and hold of pivot today ",
-      "conviction": 3,
-      "pivot": "363-364.02",
-      "supply": "368.60 372-374.60",
-      "demand": "355.75 352-349",
-      "flow": []
-    },
-    "OKTA": {
-      "emoji": "🔥",
-      "commentary": "coming to key pivot/demand zone, cant hold this we can get a flush to 157.73 then 138 , massive gap to fill downside, holds this 157.73 also a good demand on weekly, below 164 we can flush hard this morning, holds this can also be a nice long",
-      "conviction": 3,
-      "pivot": "165.74-164.18",
-      "supply": "179.44-180.55",
-      "demand": "157.73 138",
-      "flow": []
-    },
-    "SPCX": {
-      "emoji": "🔥",
-      "commentary": "this has been holding well. came to key demand and held last week, holds this 135 demand like her upside to 140.66 then 146-150 supply zone this week ",
-      "conviction": 0,
-      "pivot": "",
-      "supply": "140.66 145.07-149.34",
-      "demand": "133.48-135",
+      "pivot": "23.33",
+      "supply": "27.43",
+      "demand": "18.67",
       "flow": []
     }
   }
