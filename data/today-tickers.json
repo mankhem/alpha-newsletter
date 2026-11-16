@@ -1,14 +1,113 @@
 {
-  "date": "2026-11-13",
-  "generatedAt": "2026-11-13T11:32:51.892Z",
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T12:28:07.266Z",
   "tickers": {
+    "/ES": {
+      "emoji": "📊",
+      "commentary": "getting a li weak this morning, cant hold pivot we go to 7524 and then we see if we slide to 7491 demand zone, holds pivot and clears 7885 we can squeeze upside ",
+      "conviction": 0,
+      "pivot": "7558.25",
+      "supply": "7575-7585 7621-7624",
+      "demand": "7524 7491-7473",
+      "flow": []
+    },
     "AAPL": {
       "emoji": "🍏",
-      "commentary": "made new ATH and chilling up there at ATH, holds pivot we go higher and higher, ",
+      "commentary": "made new ATH last week and holding well. this mornig pivot holds we can go back to 360.83 and see we can breakout and make new ATH, cant hold pivot we go back to demand zone ",
       "conviction": 0,
       "pivot": "355.38",
-      "supply": "360 365",
-      "demand": "351.73-351.43 348.15 ",
+      "supply": "360.83 365",
+      "demand": "351.73-351.43 348.15",
+      "flow": []
+    },
+    "AMD": {
+      "emoji": "🧠",
+      "commentary": "was at key deamad 530 last week and couldn't hold in the premarket, this morning cant hold pivot we go to 502 demand zone , holds there and bases can be a long ",
+      "conviction": 0,
+      "pivot": "514.67",
+      "supply": "526-530.13",
+      "demand": "502-495 478",
+      "flow": []
+    },
+    "AMZN": {
+      "emoji": "📦",
+      "commentary": "inside a tight squeeze can reclaim pivot we can squeeze out, cant hold 263 demand we can got to 258.60 demand then 253 ish ",
+      "conviction": 0,
+      "pivot": "267.56",
+      "supply": "274.75-275.34",
+      "demand": "263.69-262.80 259.49-258.60",
+      "flow": []
+    },
+    "CRWD": {
+      "emoji": "🛡️",
+      "commentary": "inside a tight squeeze, cant hold pivot we go to 219.18 cant hold that then we can flush to 213.28 ish, reclaims pivot and 229.09 supply zone we go to 233.88 then 239",
+      "conviction": 3,
+      "pivot": "224.60",
+      "supply": "227.50-229.08 233.88",
+      "demand": "219.18 216.25 213.28",
+      "flow": []
+    },
+    "GOOGL": {
+      "emoji": "🔎",
+      "commentary": "had a strong resistance 296.49 broke on Friday and gave up the level, this morning trading below it, can reclaim it we going to 304 ish, cant reclaim pivot and stays below pivot we go back to 287 then 283 ish ",
+      "conviction": 0,
+      "pivot": "296.49",
+      "supply": "304.97-305.63",
+      "demand": "287.57 283.57",
+      "flow": []
+    },
+    "META": {
+      "emoji": "📱",
+      "commentary": "holding well here , can hold pivot we got o 647 supply zone breaks this we going to 664 ish, cant hold pivot we go to 624-619 demand zone, ",
+      "conviction": 0,
+      "pivot": "633.27",
+      "supply": "647.69 664.24",
+      "demand": "624.80-619.42",
+      "flow": []
+    },
+    "MU": {
+      "emoji": "💾",
+      "commentary": "at key pivot this morning cant hold this pivot we can slide downisde to 706 then 689, hold pivot we go to 770 and then we see ",
+      "conviction": 1,
+      "pivot": "738.47",
+      "supply": "770.10 804-818",
+      "demand": "706 689 652",
+      "flow": []
+    },
+    "PLTR": {
+      "emoji": "🔭",
+      "commentary": "",
+      "conviction": 0,
+      "pivot": "",
+      "supply": "",
+      "demand": "",
+      "flow": []
+    },
+    "TSLA": {
+      "emoji": "⚡",
+      "commentary": "above all emas , holds this demand and the pivot we can push back to 394 to 404, cant hold 384 demand we go lower to 377 ish ",
+      "conviction": 3,
+      "pivot": "389.30",
+      "supply": "394.98 404-406.59",
+      "demand": "386-384 377 374-372",
+      "flow": []
+    },
+    "UNH": {
+      "emoji": "🏥",
+      "commentary": "wants to break the squeeze, can break and hold pivot we breakout at go go 414-416 supply zone ",
+      "conviction": 0,
+      "pivot": "411.29",
+      "supply": "414.37-416.02",
+      "demand": "408.51 404",
+      "flow": []
+    },
+    "SPCX": {
+      "emoji": "🔥",
+      "commentary": "inside a tight squeeze, cant hold pivot we go to demand zone, holds pivot we go to 142 then 145 supply zone",
+      "conviction": 0,
+      "pivot": "140.66",
+      "supply": "142.74 145.07-146.11",
+      "demand": "135-133.48",
       "flow": []
     }
   }
